@@ -11,7 +11,7 @@
 </head>
 
 <body class="text-center">
-    <form class="form-signin" method="POST" action="./public/pags/ti/main.html">
+    <form class="form-signin" method="POST" action="./public/pags/ti/main.php">
         <img class="mb-4" src="./public/assets/img/logo.png" alt="Alpino" width="180" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Login</h1>
 

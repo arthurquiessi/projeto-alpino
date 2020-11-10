@@ -16,7 +16,7 @@
             <li class="nav-item">
                 <!-- <a class="nav-link disabled" href="#">Desativado</a> -->
                 <div class="align-self-center mr-4">
-                    <a href="./public/pags/admin/login.html"
+                    <a href="./public/pags/admin/login.php"
                         class="btn btn-outline-primary my-4 my-sm-4">Administrador</a>
                 </div>
             </li>
@@ -40,7 +40,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Tecnologia da Informação</h5>
                         <p class="card-text text-primary">Controle e gerenciamento da equipe de T.I Alpino</p>
-                        <a href="login.html" class="btn btn-primary">Entrar</a>
+                        <a href="login.php" class="btn btn-primary">Entrar</a>
                     </div>
                 </div>
             </div>
