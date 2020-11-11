@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <?php
+        include_once '../include/nav_register.php';
+    ?>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -58,7 +61,7 @@
                         <caption>Modelos cadastrados</caption>
                         <thead>
                             <tr class="table-info">
-                                <th scope="col">#</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">Primeiro</th>
                                 <th scope="col">Ação</th>
                             </tr>

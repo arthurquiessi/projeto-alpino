@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <?php
+        include_once '../include/nav_register.php';
+    ?>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -29,18 +32,17 @@
                             <h5 class="card-title">Cadastrar nova Wlan</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="">
+                                    <form action="../../../../src/db/wlan/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputWlan" class="pt-3">IP Wlan</label>
-                                                <input type="text" class="form-control" id="inputWlan" placeholder="IP">
+                                                <input type="text" name="inputWlan" class="form-control" placeholder="IP">
                                             </div>
                                         </div>
                                         <div class="pt-3">
                                             <div class="form-row justify-content-end">
-                                                <button type="button" class="btn btn-info mr-2" data-toggle="modal"
-                                                    data-target="#modalRegister">Cadastrar</button>
-                                                <button type="button" class="btn btn-warning mr-1">Limpar</button>
+                                                <button type="submit" class="btn btn-info mr-2">Cadastrar</button>
+                                                <button type="submit" class="btn btn-warning mr-1">Limpar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -58,7 +60,7 @@
                         <caption>Wlan's cadastradas</caption>
                         <thead>
                             <tr class="table-info">
-                                <th scope="col">#</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">Primeiro</th>
                                 <th scope="col">Ação</th>
                             </tr>
@@ -90,27 +92,6 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="Register"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="Register">Wlan's</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Deseja salvar esse cadastro?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Salvar</button>
-                    </div>
                 </div>
             </div>
         </div>
