@@ -1,6 +1,6 @@
 <?php
 
-$servidor = '127.0.0.1:3307';
+$servidor = 'localhost:3307';
 $db = 'alpinodb';
 $usuario = 'root';
 $senha = 'root';
@@ -12,7 +12,5 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $db);
 if(!$conn) {
     die("Conexão falhou: " . mysqli_connect_error());
 }
-
-mysqli_close($conn);
 
 ?>

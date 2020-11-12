@@ -1,3 +1,8 @@
+<?php
+    include_once("../../../../src/config/conexaodb.php");
+
+    $coleta = mysqli_query($conn, "SELECT * FROM wlan order by wlan asc");
+?>
 <html lang="pt-br">
 
 <head>
@@ -42,7 +47,6 @@
                                         <div class="pt-3">
                                             <div class="form-row justify-content-end">
                                                 <button type="submit" class="btn btn-info mr-2">Cadastrar</button>
-                                                <button type="submit" class="btn btn-warning mr-1">Limpar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -52,44 +56,29 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="py-3">
                     <table class="table">
                         <caption>Wlan's cadastradas</caption>
                         <thead>
                             <tr class="table-info">
-                                <th scope="col">ID</th>
-                                <th scope="col">Primeiro</th>
-                                <th scope="col">Ação</th>
+                                <th scope="col">WLAN</th>
+                                <th scope="col">BOTÃO</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php while($linha = mysqli_fetch_assoc($coleta)) { ?>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
-                                </td>
+                               <td>
+                                    <?php echo $linha['wlan']; ?>
+                               </td>
+                               <td>
+                                    <a href="../../../../src/db/wlan/delete.php?id=<?php echo $linha['id']; ?>">
+                                        <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
+                                    </a>
+                               </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
-                                </td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

@@ -22,7 +22,7 @@
                         Cadastro Padrão
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../registerStandard/registerWlan.php">WLAN'S</a>
+                        <a class="dropdown-item" href="./registerStandard/registerWlan.php">WLAN'S</a>
                         <a class="dropdown-item" href="./registerStandard/registerSetores.php">Setores</a>
                         <a class="dropdown-item" href="./registerStandard/registerModelMaquinas.php">Modelos de Máquinas</a>
                         <a class="dropdown-item" href="./registerStandard/registerTipoMaquinas.php">Tipo de Máquinas</a>
