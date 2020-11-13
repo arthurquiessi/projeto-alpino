@@ -1,52 +1,32 @@
 <?php
-
+ 
 include_once("../../config/conexaodb.php");
 
 $wlan = $_POST['inputWlan'];
 
-$result = mysqli_query($conn, "INSERT INTO `wlan` (`id`, `wlan`) VALUES (NULL, '$wlan')");
+$coleta = mysqli_query($conn, "SELECT * FROM wlan WHERE wlan = '{$wlan}'");
 
-?>
+// Verificações
+if($wlan != "") {
+    if(mysqli_num_rows($coleta) == 0) {
+        $result = mysqli_query($conn, "INSERT INTO `wlan` (`id`, `wlan`) VALUES (NULL, '$wlan')");
 
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title></title>
-
-    <link rel="stylesheet" href="../../../public/assets/css/style-sweetalert.css">
-    <script src="../../../public/assets/js/sweetalert.js"></script>
-</head>
-<body>
-    <?php
-        if(mysqli_affected_rows($conn) != 0){
-            echo "<script type=\"text/javascript\">
-                Swal.fire(
-                    'Good job!',
-                    'You clicked the button!',
-                    'success',
-                    timer: 1500
-                )
-                </script>";
-
-            echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../../../public/pags/admin/registerStandard/registerWlan.php'>";
-                    
-		}else{
-            echo "<script type=\"text/javascript\">
-                Swal.fire(
-                    'Good job!',
-                    'You clicked the button!',
-                    'error'
-                )
-                </script>";
+        if(mysqli_affected_rows($conn) != 0){ 
+            echo "<script type=\"text/javascript\">alert(\"Incluído com sucesso\");</script>
+                <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../../../public/pags/admin/registerStandard/registerWlan.php'>";       
+        }else{
+            echo "<script type=\"text/javascript\">alert(\"Erro de inclusão\");</script> 
+                <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../../../public/pags/admin/registerStandard/registerWlan.php'>";
         }
-        
-        
-    ?>
-</body>
-</html>
+    } else {
+        echo "<script type=\"text/javascript\">alert(\"Wlan já cadastrada\");</script>
+            <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../../../public/pags/admin/registerStandard/registerWlan.php'>";
+    }
+} else {
+    echo "<script type=\"text/javascript\">alert(\"Campo vazio! Obrigatório preencher para cadastrar\");</script>
+        <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../../../public/pags/admin/registerStandard/registerWlan.php'>";
+}
 
-<?php
-    // fechar a conexão com SQL porta 3307
-    mysqli_close($conn);
+// fechar a conexão com SQL porta 3307
+mysqli_close($conn);
 ?>
