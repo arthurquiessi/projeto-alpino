@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="py-3">
                     <table class="table">
                         <caption>Modelos de MS Office Cadastrados</caption>
