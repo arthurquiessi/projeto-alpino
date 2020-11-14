@@ -1,3 +1,8 @@
+<?php
+    include_once("../../../../src/config/conexaodb.php");
+
+    $coleta = mysqli_query($conn, "SELECT * FROM modelo_maquina order by modelo_maquina asc");
+?>
 <html lang="pt-br">
 
 <head>
@@ -30,19 +35,16 @@
                             <h5 class="card-title">Cadastrar Modelo de Máquinas</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="">
+                                    <form action="../../../../src/db/modeloMaquina/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
-                                                <label for="inputWlan" class="pt-3">Modelo Máquina</label>
-                                                <input type="text" class="form-control" id="inputWlan"
-                                                    placeholder="Máquina">
+                                                <label for="inputModelMaquina" class="pt-3">Modelo Máquina</label>
+                                                <input type="text" name="inputModelMaquina" class="form-control" placeholder="Máquina">
                                             </div>
                                         </div>
                                         <div class="pt-3">
                                             <div class="form-row justify-content-end">
-                                                <button type="button" class="btn btn-info mr-2" data-toggle="modal"
-                                                    data-target="#modalRegister">Cadastrar</button>
-                                                <button type="button" class="btn btn-warning mr-1">Limpar</button>
+                                                <button type="submit" class="btn btn-info mr-2">Cadastrar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -52,67 +54,31 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="py-3">
                     <table class="table">
-                        <caption>Modelos de Máquinas Cadastrados</caption>
+                        <caption>Modelos de Máquinas Cadastradas</caption>
                         <thead>
                             <tr class="table-info">
-                                <th scope="col">ID</th>
-                                <th scope="col">Primeiro</th>
-                                <th scope="col">Ação</th>
+                                <th scope="col">MODELO MÁQUINA</th>
+                                <th scope="col">BOTÃO</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php while($linha = mysqli_fetch_assoc($coleta)) { ?>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
+                                    <?php echo $linha['modelo_maquina']; ?>
+                                </td>
+                                <td>
+                                    <a href="../../../../src/db/modeloMaquina/delete.php?id=<?php echo $linha['id']; ?>">
+                                        <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
+                                    </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
-                                </td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="Register"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="Register">Modelos de Máquina</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Deseja salvar esse cadastro?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Salvar</button>
-                    </div>
                 </div>
             </div>
         </div>

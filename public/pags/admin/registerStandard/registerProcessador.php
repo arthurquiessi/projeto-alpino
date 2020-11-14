@@ -1,3 +1,8 @@
+<?php
+    include_once("../../../../src/config/conexaodb.php");
+
+    $coleta = mysqli_query($conn, "SELECT * FROM processador order by processador asc");
+?>
 <html lang="pt-br">
 
 <head>
@@ -29,22 +34,19 @@
                 <div class="py-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Cadastrar novo processador</h5>
+                            <h5 class="card-title">Cadastrar Novo Processador</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="">
+                                    <form action="../../../../src/db/processador/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
-                                                <label for="inputWlan" class="pt-3">Processador</label>
-                                                <input type="text" class="form-control" id="inputWlan"
-                                                    placeholder="Processador">
+                                                <label for="inputProcessador" class="pt-3">Processador</label>
+                                                <input type="text" name="inputProcessador" class="form-control" placeholder="Processador">
                                             </div>
                                         </div>
                                         <div class="pt-3">
                                             <div class="form-row justify-content-end">
-                                                <button type="button" class="btn btn-info mr-2" data-toggle="modal"
-                                                    data-target="#modalRegister">Cadastrar</button>
-                                                <button type="button" class="btn btn-warning mr-1">Limpar</button>
+                                                <button type="submit" class="btn btn-info mr-2">Cadastrar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -54,67 +56,31 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="py-3">
                     <table class="table">
                         <caption>Precessadores cadastrados</caption>
                         <thead>
                             <tr class="table-info">
-                                <th scope="col">ID</th>
-                                <th scope="col">Primeiro</th>
-                                <th scope="col">Ação</th>
+                                <th scope="col">PROCESSADOR</th>
+                                <th scope="col">BOTÃO</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php while($linha = mysqli_fetch_assoc($coleta)) { ?>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
+                                    <?php echo $linha['processador']; ?>
+                                </td>
+                                <td>
+                                    <a href="../../../../src/db/processador/delete.php?id=<?php echo $linha['id']; ?>">
+                                        <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
+                                    </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">Edit</button>
-                                    <button type="button" class="btn btn-danger">Excluir</button>
-                                </td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="Register"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="Register">Processadores</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Deseja salvar esse cadastro?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Salvar</button>
-                    </div>
                 </div>
             </div>
         </div>
