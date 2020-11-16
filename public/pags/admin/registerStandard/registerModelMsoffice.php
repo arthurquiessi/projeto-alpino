@@ -37,7 +37,7 @@
                             <h5 class="card-title">Cadastrar Modelo MS Office</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/modeloMsOffice/insert.php" method="POST">
+                                    <form action="../../../../src/db/admin/modeloMsOffice/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputMsOffice" class="pt-3">Modelo MS Office</label>
@@ -73,7 +73,7 @@
                                     <?php echo $linha['modelo_ms_office']; ?>
                                 </td>
                                 <td>
-                                    <a href="../../../../src/db/modeloMsOffice/delete.php?id=<?php echo $linha['id']; ?>">
+                                    <a href="../../../../src/db/admin/modeloMsOffice/delete.php?id=<?php echo $linha['id']; ?>">
                                         <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
                                     </a>
                                 </td>

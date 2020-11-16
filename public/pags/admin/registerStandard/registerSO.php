@@ -37,7 +37,7 @@
                             <h5 class="card-title">Cadastrar Sistema Operacional</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/sistemaOperacional/insert.php" method="POST">
+                                    <form action="../../../../src/db/admin/sistemaOperacional/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputSO" class="pt-3">Sistema Operacional</label>
@@ -73,7 +73,7 @@
                                     <?php echo $linha['sistema_operacional']; ?>
                                 </td>
                                 <td>
-                                    <a href="../../../../src/db/sistemaOperacional/delete.php?id=<?php echo $linha['id']; ?>">
+                                    <a href="../../../../src/db/admin/sistemaOperacional/delete.php?id=<?php echo $linha['id']; ?>">
                                         <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
                                     </a>
                                 </td>

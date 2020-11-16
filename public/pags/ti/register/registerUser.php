@@ -1,3 +1,13 @@
+<?php
+    include_once("../../../../src/config/conexaodb.php");
+
+    $coleta_setor = "SELECT * FROM setor";
+    $sql_setor = mysqli_query($conn, $coleta_setor);
+
+    $coleta_wlan = "SELECT * FROM wlan";
+    $sql_wlan = mysqli_query($conn, $coleta_wlan);
+    $linha_wlan = mysqli_fetch_assoc($sql_wlan)
+?>
 <html lang="pt-br">
 
 <head>
@@ -7,7 +17,9 @@
 
     <!-- BootStrap CSS-->
     <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="../../../assets/css/"> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body class="bg-light">
@@ -29,44 +41,44 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <form action="">
+                                    <form action="../../../../src/db/ti/usuarios/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-4">
                                                 <label for="inputWlan">Wlan</label>
-                                                <input type="text" class="form-control" id="inputWlan" disabled>
+                                                <input type="text" name="inputWlan" placeholder="192.168.1." class="form-control" disabled>
                                             </div>
                                             <div class="form-group col-sm-2">
                                                 <label for="inputIp">IP</label>
-                                                <input type="text" class="form-control" id="inputIp" placeholder="IP">
+                                                <input type="text" name="inputIp" class="form-control" placeholder="IP">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputUsuario">Usuário</label>
-                                                <input type="text" class="form-control" id="inputUsuario"
-                                                    placeholder="Usuário">
+                                                <input type="text" name="inputUsuario" class="form-control" placeholder="Usuário">
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputSetor">Setor</label>
-                                                <select class="custom-select" id="inputSetor">
+                                                <select class="custom-select" name="inputSetor">
                                                     <option selected>Escolha...</option>
-                                                    <option value="">...</option>
+                                                    <?php while($linha = mysqli_fetch_assoc($sql_setor)) { ?>
+                                                        <option value="<?php echo $linha['setor']; ?>"><?php echo $linha['setor']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="inputHomeOffice">Home Office</label>
-                                                <select class="custom-select" id="inputHomeOffice">
+                                                <select class="custom-select" name="inputHomeOffice">
                                                     <option selected>Escolha...</option>
-                                                    <option value="sim">SIM</option>
-                                                    <option value="nao">NÃO</option>
+                                                    <option value="SIM">SIM</option>
+                                                    <option value="NÃO">NÃO</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="pt-3">
                                             <div class="form-row justify-content-end">
-                                                <button type="button" class="btn btn-info mr-2" data-toggle="modal"
-                                                    data-target="#modalRegister">Cadastrar</button>
-                                                <button type="button" class="btn btn-warning mr-1">Limpar</button>
+                                                <button type="submit" class="btn btn-info mr-2">Cadastrar</button>
+                                                <button type="submit" class="btn btn-warning mr-1">Limpar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -77,33 +89,25 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="Register"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="Register">Usuário</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Deseja salvar esse cadastro?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Salvar</button>
-                    </div>
-                </div>
-            </div>
+        <div class="row justify-content-center">
+            <table id="tabela-usuarios" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>IP</th>
+                        <th>USUÁRIO</th>
+                        <th>SETOR DO USUÁRIO</th>
+                        <th>HOME OFFICE</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
+
     <!-- Bootstrap/Jquery/Popper.js -->
     <script src="../../../../node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="../../../../node_modules/popper.js/dist/popper.min.js"></script>
     <script src="../../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- <script src="../../../assets/js/datatable.js"></script> -->
+    <script src="../../../assets/js/datatable-usuarios.js"></script>
 </body>
 
 </html>

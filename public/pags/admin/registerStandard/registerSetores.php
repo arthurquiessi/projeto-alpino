@@ -37,7 +37,7 @@
                             <h5 class="card-title">Cadastrar Setores</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/setor/insert.php" method="POST">
+                                    <form action="../../../../src/db/admin/setor/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputSetor" class="pt-3">Setores</label>
@@ -73,7 +73,7 @@
                                     <?php echo $linha['setor']; ?>
                                </td>
                                <td>
-                                    <a href="../../../../src/db/setor/delete.php?id=<?php echo $linha['id']; ?>">
+                                    <a href="../../../../src/db/admin/setor/delete.php?id=<?php echo $linha['id']; ?>">
                                         <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
                                     </a>
                                </td>

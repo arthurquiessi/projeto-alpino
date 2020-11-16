@@ -37,7 +37,7 @@
                             <h5 class="card-title">Cadastrar Novo Modelo Impressora</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/modeloImpressora/insert.php" method="POST">
+                                    <form action="../../../../src/db/admin/modeloImpressora/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputModelImpressora" class="pt-3">Modelo</label>
@@ -73,7 +73,7 @@
                                     <?php echo $linha['modelo_impressora']; ?>
                                 </td>
                                 <td>
-                                    <a href="../../../../src/db/modeloImpressora/delete.php?id=<?php echo $linha['id']; ?>">
+                                    <a href="../../../../src/db/admin/modeloImpressora/delete.php?id=<?php echo $linha['id']; ?>">
                                         <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
                                     </a>
                                 </td>

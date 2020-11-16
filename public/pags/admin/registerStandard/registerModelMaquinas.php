@@ -35,7 +35,7 @@
                             <h5 class="card-title">Cadastrar Modelo de Máquinas</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/modeloMaquina/insert.php" method="POST">
+                                    <form action="../../../../src/db/admin/modeloMaquina/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputModelMaquina" class="pt-3">Modelo Máquina</label>
@@ -71,7 +71,7 @@
                                     <?php echo $linha['modelo_maquina']; ?>
                                 </td>
                                 <td>
-                                    <a href="../../../../src/db/modeloMaquina/delete.php?id=<?php echo $linha['id']; ?>">
+                                    <a href="../../../../src/db/admin/modeloMaquina/delete.php?id=<?php echo $linha['id']; ?>">
                                         <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
                                     </a>
                                 </td>

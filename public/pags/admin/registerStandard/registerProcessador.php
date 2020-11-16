@@ -37,7 +37,7 @@
                             <h5 class="card-title">Cadastrar Novo Processador</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/processador/insert.php" method="POST">
+                                    <form action="../../../../src/db/admin/processador/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputProcessador" class="pt-3">Processador</label>
@@ -73,7 +73,7 @@
                                     <?php echo $linha['processador']; ?>
                                 </td>
                                 <td>
-                                    <a href="../../../../src/db/processador/delete.php?id=<?php echo $linha['id']; ?>">
+                                    <a href="../../../../src/db/admin/processador/delete.php?id=<?php echo $linha['id']; ?>">
                                         <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
                                     </a>
                                 </td>

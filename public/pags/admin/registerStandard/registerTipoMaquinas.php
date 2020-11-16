@@ -37,7 +37,7 @@
                             <h5 class="card-title">Cadastrar Tipo de Máquina</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/tipoMaquina/insert.php" method="POST">
+                                    <form action="../../../../src/db/admin/tipoMaquina/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputTipoMaquina" class="pt-3">Tipo Máquina</label>
@@ -73,7 +73,7 @@
                                     <?php echo $linha['tipo_maquina']; ?>
                                 </td>
                                 <td>
-                                    <a href="../../../../src/db/tipoMaquina/delete.php?id=<?php echo $linha['id']; ?>">
+                                    <a href="../../../../src/db/admin/tipoMaquina/delete.php?id=<?php echo $linha['id']; ?>">
                                         <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
                                     </a>
                                 </td>

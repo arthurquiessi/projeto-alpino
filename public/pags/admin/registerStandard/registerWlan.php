@@ -37,7 +37,7 @@
                             <h5 class="card-title">Cadastrar nova Wlan</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/wlan/insert.php" method="POST">
+                                    <form action="../../../../src/db/admin/wlan/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-5">
                                                 <label for="inputWlan" class="pt-3">IP Wlan</label>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-5">
                 <div class="py-3">
                     <table class="table">
                         <caption>Wlan's cadastradas</caption>
@@ -73,7 +73,7 @@
                                     <?php echo $linha['wlan']; ?>
                                </td>
                                <td>
-                                    <a href="../../../../src/db/wlan/delete.php?id=<?php echo $linha['id']; ?>">
+                                    <a href="../../../../src/db/admin/wlan/delete.php?id=<?php echo $linha['id']; ?>">
                                         <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
                                     </a>
                                </td>
