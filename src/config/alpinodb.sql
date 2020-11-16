@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Nov 14, 2020 at 05:27 PM
+-- Generation Time: Nov 16, 2020 at 07:41 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -59,7 +59,31 @@ CREATE TABLE `modelo_maquina` (
 --
 
 INSERT INTO `modelo_maquina` (`id`, `modelo_maquina`) VALUES
-(3, 'LENOVO V520S');
+(7, 'DELL LATITUDE 3440'),
+(5, 'DELL LATITUDE E5140'),
+(8, 'DELL LATITUDE E5410'),
+(9, 'DELL LATITUDE E5420'),
+(10, 'DELL LATITUDE E5430'),
+(11, 'DELL LATITUDE E6430'),
+(12, 'DELL OPTIPLEX 3010'),
+(13, 'DELL OPTIPLEX 320'),
+(14, 'DELL OPTIPLEX 380'),
+(15, 'DELL OPTIPLEX 390'),
+(16, 'DELL OPTIPLEX 745'),
+(17, 'DELL OPTIPLEX 755'),
+(18, 'DELL OPTIPLEX GX 260'),
+(19, 'DELL OPTIPLEX GX 620'),
+(6, 'DELL POWER EDGE T410'),
+(20, 'DELL PRECISION T3500'),
+(22, 'DELL PRECISION T3600'),
+(23, 'DELL VOSTRO 1014'),
+(24, 'DELL VOSTRO 220S'),
+(25, 'DELL VOSTRO 3460'),
+(28, 'LENOVO IDEIAPAD B320'),
+(29, 'LENOVO THINKPAD T440P'),
+(3, 'LENOVO V520S'),
+(27, 'LENOVO W10 S510'),
+(26, 'NCOMPUTING');
 
 -- --------------------------------------------------------
 
@@ -95,6 +119,13 @@ CREATE TABLE `modelo_ramal` (
   `modelo_ramal` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `modelo_ramal`
+--
+
+INSERT INTO `modelo_ramal` (`id`, `modelo_ramal`) VALUES
+(5, 'YEALINK SIP-T19P E2');
+
 -- --------------------------------------------------------
 
 --
@@ -111,7 +142,13 @@ CREATE TABLE `processador` (
 --
 
 INSERT INTO `processador` (`id`, `processador`) VALUES
-(3, 'INTEL CORE I3 3º GERAÇÃO');
+(11, 'INTEL CORE I3'),
+(7, 'INTEL CORE I5'),
+(8, 'INTEL CORE I7'),
+(9, 'INTEL CORE I9'),
+(4, 'INTEL CORE PENTIUM'),
+(6, 'INTEL DUAL CORE'),
+(10, 'INTEL XEON');
 
 -- --------------------------------------------------------
 
@@ -168,6 +205,18 @@ CREATE TABLE `sistema_operacional` (
   `sistema_operacional` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `sistema_operacional`
+--
+
+INSERT INTO `sistema_operacional` (`id`, `sistema_operacional`) VALUES
+(9, 'LINUX'),
+(2, 'MICROSOFT WINDOWS 10'),
+(8, 'MICROSOFT WINDOWS 7 32 BITS'),
+(7, 'MICROSOFT WINDOWS 7 64 BITS'),
+(5, 'MICROSOFT WINDOWS 8'),
+(6, 'MICROSOFT WINDOWS SERVER 2019');
+
 -- --------------------------------------------------------
 
 --
@@ -178,6 +227,37 @@ CREATE TABLE `tipo_maquina` (
   `id` int(10) UNSIGNED NOT NULL,
   `tipo_maquina` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tipo_maquina`
+--
+
+INSERT INTO `tipo_maquina` (`id`, `tipo_maquina`) VALUES
+(2, 'DESKTOP'),
+(1, 'NOTEBOOK'),
+(3, 'SERVIDOR'),
+(4, 'VIRTUALIZAÇÃO');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `wlan` varchar(45) NOT NULL,
+  `ip` int(10) UNSIGNED NOT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `setor` varchar(100) NOT NULL,
+  `homeOffice` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `usuario`
+--
+
+INSERT INTO `usuario` (`wlan`, `ip`, `usuario`, `setor`, `homeOffice`) VALUES
+('192.168.1.', 1, 'TESTE', 'MANUTENÇÃO', 'SIM');
 
 -- --------------------------------------------------------
 
@@ -260,6 +340,14 @@ ALTER TABLE `tipo_maquina`
   ADD UNIQUE KEY `tipo_maquina` (`tipo_maquina`);
 
 --
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`ip`),
+  ADD UNIQUE KEY `ip` (`ip`),
+  ADD UNIQUE KEY `usuario` (`usuario`);
+
+--
 -- Indexes for table `wlan`
 --
 ALTER TABLE `wlan`
@@ -274,55 +362,55 @@ ALTER TABLE `wlan`
 -- AUTO_INCREMENT for table `modelo_impressora`
 --
 ALTER TABLE `modelo_impressora`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `modelo_maquina`
 --
 ALTER TABLE `modelo_maquina`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `modelo_ms_office`
 --
 ALTER TABLE `modelo_ms_office`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `modelo_ramal`
 --
 ALTER TABLE `modelo_ramal`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `processador`
 --
 ALTER TABLE `processador`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `sistema_operacional`
 --
 ALTER TABLE `sistema_operacional`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tipo_maquina`
 --
 ALTER TABLE `tipo_maquina`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `wlan`
 --
 ALTER TABLE `wlan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
