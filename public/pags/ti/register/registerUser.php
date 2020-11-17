@@ -4,9 +4,7 @@
     $coleta_setor = "SELECT * FROM setor";
     $sql_setor = mysqli_query($conn, $coleta_setor);
 
-    $coleta_wlan = "SELECT * FROM wlan";
-    $sql_wlan = mysqli_query($conn, $coleta_wlan);
-    $linha_wlan = mysqli_fetch_assoc($sql_wlan)
+    $coleta_usuario = mysqli_query($conn, "SELECT * FROM usuario order by ip asc");
 ?>
 <html lang="pt-br">
 
@@ -41,6 +39,12 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
+                                <?php
+                                    if(isset($_SESSION['msg'])){
+                                        echo $_SESSION['msg'];
+                                        unset($_SESSION['msg']);
+                                    }
+                                ?>
                                     <form action="../../../../src/db/ti/usuarios/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-4">
@@ -49,7 +53,7 @@
                                             </div>
                                             <div class="form-group col-sm-2">
                                                 <label for="inputIp">IP</label>
-                                                <input type="text" name="inputIp" class="form-control" placeholder="IP">
+                                                <input type="text" name="inputIp" class="form-control" placeholder="IP" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputUsuario">Usuário</label>
@@ -78,7 +82,7 @@
                                         <div class="pt-3">
                                             <div class="form-row justify-content-end">
                                                 <button type="submit" class="btn btn-info mr-2">Cadastrar</button>
-                                                <button type="submit" class="btn btn-warning mr-1">Limpar</button>
+                                                <button type="reset" value="Apagar Campos" class="btn btn-warning mr-1">Limpar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -90,16 +94,46 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <table id="tabela-usuarios" class="display" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>IP</th>
-                        <th>USUÁRIO</th>
-                        <th>SETOR DO USUÁRIO</th>
-                        <th>HOME OFFICE</th>
-                    </tr>
-                </thead>
-            </table>
+            <div class="col-md-10">
+                <div class="py-3">
+                    <table class="table">
+                        <caption>Usuários cadastrados</caption>
+                        <thead>
+                            <tr class="table-info">
+                                <th scope="col">IP</th>
+                                <th scope="col">USUÁRIO</th>
+                                <th scope="col">SETOR DO USUÁRIO</th>
+                                <th scope="col">HOME OFFICE</th>
+                                <th scope="col">BOTÃO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while($linha_tabela = mysqli_fetch_assoc($coleta_usuario)) { ?>
+                                <tr>
+                                <td>
+                                        <?php echo $linha_tabela['ip']; ?>
+                                </td>
+                                <td>
+                                        <?php echo $linha_tabela['usuario']; ?>
+                                </td>
+                                <td>
+                                        <?php echo $linha_tabela['setor']; ?>
+                                </td>
+                                <td>
+                                        <?php echo $linha_tabela['homeOffice']; ?>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm">Editar</button>    
+                                    <a href="../../../../src/db/ti/usuarios/delete.php?id=<?php echo $linha_tabela['ip']; ?>">
+                                        <button type="button" class="btn btn-danger btn-sm">Excluir</button>    
+                                    </a>
+                                </td>
+                                </tr>
+                            <?php } ?>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>                                                
         </div>
     </div>
 
