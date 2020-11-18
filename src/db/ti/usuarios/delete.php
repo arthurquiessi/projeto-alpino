@@ -2,7 +2,7 @@
 
 include_once("../../../config/conexaodb.php");
 
-$id = $_GET['ip'];
+$id = $_GET['id'];
 
 $result = mysqli_query($conn, "DELETE FROM usuario WHERE ip = '$id'");
 
@@ -17,3 +17,4 @@ if(mysqli_affected_rows($conn) != 0){
 
 mysqli_close($conn);
 ?>
+

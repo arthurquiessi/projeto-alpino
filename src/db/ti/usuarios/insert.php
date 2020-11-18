@@ -14,7 +14,7 @@ if(mysqli_num_rows($coleta) == 0) {
     $result = mysqli_query($conn, $cadastro);
 
     if(mysqli_affected_rows($conn) != 0){ 
-        $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Cadastrado com sucesso</div>";
+        echo "<script type=\"text/javascript\">alert(\"inserido com sucesso\");</script> ";
         header("Location: ../../../../public/pags/ti/register/registerUser.php");
     }else {
         echo "<script type=\"text/javascript\">alert(\"Erro de inclusão\");</script> 

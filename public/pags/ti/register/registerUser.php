@@ -4,7 +4,7 @@
     $coleta_setor = "SELECT * FROM setor";
     $sql_setor = mysqli_query($conn, $coleta_setor);
 
-    $coleta_usuario = mysqli_query($conn, "SELECT * FROM usuario order by ip asc");
+    $sql_usuario = mysqli_query($conn, "SELECT * FROM usuario order by ip asc");
 ?>
 <html lang="pt-br">
 
@@ -39,12 +39,6 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                <?php
-                                    if(isset($_SESSION['msg'])){
-                                        echo $_SESSION['msg'];
-                                        unset($_SESSION['msg']);
-                                    }
-                                ?>
                                     <form action="../../../../src/db/ti/usuarios/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-4">
@@ -108,7 +102,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php while($linha_tabela = mysqli_fetch_assoc($coleta_usuario)) { ?>
+                            <?php while($linha_tabela = mysqli_fetch_assoc($sql_usuario)) { ?>
                                 <tr>
                                 <td>
                                         <?php echo $linha_tabela['ip']; ?>
