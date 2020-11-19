@@ -31,6 +31,13 @@
                 </div>
             </div>
         </div>
+
+        <?php
+                                if(isset($_SESSION['msg'])) {
+                                    echo $_SESSION['msg'];
+                                    unset($_SESSION['msg']);
+                                }
+                            ?>
         <div class="row justify-content-center">
             <div class="col-md-7">
                 <div class="py-5">
@@ -57,7 +64,7 @@
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
-                                            <div class="form-group col-md-5">
+                                            <div class="form-group col-md-6">
                                                 <label for="inputSetor">Setor</label>
                                                 <select class="custom-select" name="inputSetor">
                                                     <option value="" selected>Escolha...</option>
@@ -173,7 +180,7 @@
                             </div>
                         </div>
                         <div class="form-row justify-content-center">
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-7">
                                 <label for="setor">Setor</label>
                                 <select class="custom-select" name="inputSetor" id="setor">
                                     <option value="">Escolha...</option>

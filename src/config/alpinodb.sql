@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Nov 16, 2020 at 07:41 PM
+-- Generation Time: Nov 19, 2020 at 07:38 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -245,7 +245,6 @@ INSERT INTO `tipo_maquina` (`id`, `tipo_maquina`) VALUES
 --
 
 CREATE TABLE `usuario` (
-  `wlan` varchar(45) NOT NULL,
   `ip` int(10) UNSIGNED NOT NULL,
   `usuario` varchar(100) NOT NULL,
   `setor` varchar(100) NOT NULL,
@@ -256,8 +255,16 @@ CREATE TABLE `usuario` (
 -- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`wlan`, `ip`, `usuario`, `setor`, `homeOffice`) VALUES
-('192.168.1.', 1, 'TESTE', 'MANUTENÇÃO', 'SIM');
+INSERT INTO `usuario` (`ip`, `usuario`, `setor`, `homeOffice`) VALUES
+(1, 'TESTE', '', ''),
+(2, 'SERVIDOR', 'TECNOLOGIA DA INFORMAÇÃO', 'NÃO'),
+(3, 'VIRTUAL HYPER-V', 'TECNOLOGIA DA INFORMAÇÃO', 'NÃO'),
+(4, 'LIVRE', '', ''),
+(5, 'DECIO SILVA', 'SGI', 'NÃO'),
+(6, 'REINALDO LIMA', 'PROJETOS', 'NÃO'),
+(7, 'HEXAGON', 'METROLOGIA', 'NÃO'),
+(8, 'ROBERTO FREITAS', 'VENDAS', 'NÃO'),
+(10, 'RENATA NANNIN', 'FINANCEIRO', 'SIM');
 
 -- --------------------------------------------------------
 
@@ -410,7 +417,7 @@ ALTER TABLE `tipo_maquina`
 -- AUTO_INCREMENT for table `wlan`
 --
 ALTER TABLE `wlan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

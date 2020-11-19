@@ -4,7 +4,7 @@ include_once("../../../config/conexaodb.php");
 
 $id = $_GET['id'];
 
-$result = mysqli_query($conn, "DELETE FROM usuario WHERE ip = '$id'");
+$delet = mysqli_query($conn, "DELETE FROM usuario WHERE ip = '$id'");
 
 if(mysqli_affected_rows($conn) != 0){
     echo "<script type=\"text/javascript\">alert(\"Excluído com sucesso\");</script>";
@@ -17,4 +17,3 @@ if(mysqli_affected_rows($conn) != 0){
 
 mysqli_close($conn);
 ?>
-
