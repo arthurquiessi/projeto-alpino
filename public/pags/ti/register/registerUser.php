@@ -5,7 +5,9 @@
 
     $sql_usuario = mysqli_query($conn, "SELECT * FROM usuario order by ip asc");
     
-    $sql = mysqli_query($conn, "SELECT * FROM setor");
+    $sql_filter = mysqli_query($conn, "SELECT * FROM setor");
+
+    $sql_edit = mysqli_query($conn, "SELECT * FROM setor");
 ?>
 <html lang="pt-br">
 
@@ -17,6 +19,7 @@
     <!-- BootStrap CSS-->
     <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
 </head>
 
 <body class="bg-light">
@@ -31,13 +34,6 @@
                 </div>
             </div>
         </div>
-
-        <?php
-                                if(isset($_SESSION['msg'])) {
-                                    echo $_SESSION['msg'];
-                                    unset($_SESSION['msg']);
-                                }
-                            ?>
         <div class="row justify-content-center">
             <div class="col-md-7">
                 <div class="py-5">
@@ -99,10 +95,16 @@
                 </div>
             </div>
         </div>
+        <div class="row justify-content-left">
+            <div class="col" style="margin-left: 90px; margin-bottom: 15px;">
+                <button type="submit" class="btn btn-outline-secondary mr-2" data-toggle="modal"
+                    data-target="#filtros">FILTRAR ITENS DA TABELA</button>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div>
-                    <table class="table">
+                    <table id="minhaTabela" class="table">
                         <caption>Usuários cadastrados</caption>
                         <thead>
                             <tr class="table-info">
@@ -149,7 +151,48 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
+    <!-- Modal de filtros da tabela -->
+    <div class="modal fade" id="filtros" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">FILTRAR DADOS DA TABELA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-md-7">
+                            <label for="filterSetor">Setor</label>
+                            <select class="custom-select" name="filterSetor">
+                                <option value="">Escolha...</option>
+                                <?php
+                                        while($modal_filter = mysqli_fetch_assoc($sql_filter)) { 
+                                    ?>
+                                <option value="<?php echo $modal_filter['setor']; ?>">
+                                    <?php echo $modal_filter['setor']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="filterHomeOffice">Home Office</label>
+                            <select class="custom-select" name="filterHomeOffice">
+                                <option value="" selected>Escolha...</option>
+                                <option value="SIM">SIM</option>
+                                <option value="NÃO">NÃO</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de edição de dados-->
     <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -185,10 +228,10 @@
                                 <select class="custom-select" name="inputSetor" id="setor">
                                     <option value="">Escolha...</option>
                                     <?php
-                                        while($modal = mysqli_fetch_assoc($sql)) { 
+                                        while($modal_edit = mysqli_fetch_assoc($sql_edit)) { 
                                     ?>
-                                    <option value="<?php echo $modal['setor']; ?>">
-                                        <?php echo $modal['setor']; ?></option>
+                                    <option value="<?php echo $modal_edit['setor']; ?>">
+                                        <?php echo $modal_edit['setor']; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -216,6 +259,28 @@
     <script src="../../../../node_modules/popper.js/dist/popper.min.js"></script>
     <script src="../../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../../../../public/assets/js/edit-usuario.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#minhaTabela').DataTable({
+            "language": {
+                "lengthMenu": "Mostrando _MENU_ registros por página",
+                "zeroRecords": "Nada encontrado",
+                "info": "Mostrando página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "infoFiltered": "(filtrado de _MAX_ registros no total)"
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

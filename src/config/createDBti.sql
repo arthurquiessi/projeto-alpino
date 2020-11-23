@@ -4,6 +4,5 @@ create table usuario (
     setor VARCHAR(100) NOT NULL,
     homeOffice varchar(3) NOT NULL,
     UNIQUE KEY (ip),
-    UNIQUE KEY (usuario),
     PRIMARY KEY (ip)
 );
