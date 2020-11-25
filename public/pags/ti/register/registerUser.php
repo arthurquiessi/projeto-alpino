@@ -163,31 +163,33 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-md-7">
-                            <label for="filterSetor">Setor</label>
-                            <select class="custom-select" name="filterSetor">
-                                <option value="">Escolha...</option>
-                                <?php
+                    <form action="../../../../src/db/ti/usuarios/filter.php" method="POST">
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-7">
+                                <label for="filterSetor">Setor</label>
+                                <select class="custom-select" name="filterSetor">
+                                    <option value="">Escolha...</option>
+                                    <?php
                                         while($modal_filter = mysqli_fetch_assoc($sql_filter)) { 
                                     ?>
-                                <option value="<?php echo $modal_filter['setor']; ?>">
-                                    <?php echo $modal_filter['setor']; ?></option>
-                                <?php } ?>
-                            </select>
+                                    <option value="<?php echo $modal_filter['setor']; ?>">
+                                        <?php echo $modal_filter['setor']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="filterHomeOffice">Home Office</label>
+                                <select class="custom-select" name="filterHomeOffice">
+                                    <option value="" selected>Escolha...</option>
+                                    <option value="SIM">SIM</option>
+                                    <option value="NÃO">NÃO</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="filterHomeOffice">Home Office</label>
-                            <select class="custom-select" name="filterHomeOffice">
-                                <option value="" selected>Escolha...</option>
-                                <option value="SIM">SIM</option>
-                                <option value="NÃO">NÃO</option>
-                            </select>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Filtrar</button>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                    </form>
                 </div>
             </div>
         </div>
