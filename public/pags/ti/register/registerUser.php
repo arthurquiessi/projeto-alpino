@@ -102,9 +102,9 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-lg-12">
                 <div>
-                    <table id="minhaTabela" class="table">
+                    <table id="tabelaUsuario" class="table">
                         <caption>Usuários cadastrados</caption>
                         <thead>
                             <tr class="table-info">
@@ -272,7 +272,7 @@
     <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
     <script>
     $(document).ready(function() {
-        $('#minhaTabela').DataTable({
+        $('#tabelaUsuario').DataTable({
             "language": {
                 "lengthMenu": "Mostrando _MENU_ registros por página",
                 "zeroRecords": "Nada encontrado",

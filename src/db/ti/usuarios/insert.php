@@ -21,7 +21,7 @@ if(mysqli_num_rows($coleta) == 0) {
             <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../../../../public/pags/ti/register/registerUser.php'>";
     }
 } else {
-    echo "<script type=\"text/javascript\">alert(\"IP ou usuário já cadastrado\");</script>
+    echo "<script type=\"text/javascript\">alert(\"IP já cadastrado\");</script>
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../../../../public/pags/ti/register/registerUser.php'>";
 }
 

@@ -13,8 +13,8 @@
                 <a class="nav-link" href="../main.php" style="font-size:16px;">Home<span class="sr-only"></span></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="font-size:16px;">
                     Cadastrar
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -24,18 +24,20 @@
                     <a class="dropdown-item" href="../register/registerMachine.php">Máquinas</a>
                     <a class="dropdown-item" href="../register/registerOffice.php">MS Office</a>
                     <a class="dropdown-item" href="../register/registerRamal.php">Ramal</a>
-                    <a class="dropdown-item" href="../register/registerPrinter.php">Impressoras</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="font-size:16px;">
                     Consultar
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="../consult/consultAll.php">Consulta Geral</a>
-                    <a class="dropdown-item" href="../consult/consultPrinter.php">Consultar Impressoras</a>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./register/registerPrinter.php" style="font-size:16px;">Impressoras<span
+                        class="sr-only"></span></a>
             </li>
         </ul>
         <ul class="nav justify-content-end">
