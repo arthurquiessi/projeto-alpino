@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Nov 23, 2020 at 07:46 PM
+-- Generation Time: Nov 27, 2020 at 07:52 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -21,6 +21,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `alpinodb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `maquina`
+--
+
+CREATE TABLE `maquina` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `tag` varchar(100) NOT NULL,
+  `modelo` varchar(100) NOT NULL,
+  `tipo` varchar(100) NOT NULL,
+  `processador` varchar(100) NOT NULL,
+  `memoria` varchar(100) NOT NULL,
+  `armazenamento` varchar(100) NOT NULL,
+  `tipo_armazenamento` varchar(100) NOT NULL,
+  `sistema_operacional` varchar(100) NOT NULL,
+  `nfcompra` varchar(100) NOT NULL,
+  `datacompra` varchar(100) NOT NULL,
+  `distribuidora` varchar(100) NOT NULL,
+  `nfgarantia` varchar(100) NOT NULL,
+  `datagarantia` varchar(100) NOT NULL,
+  `statusmaq` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `maquina`
+--
+
+INSERT INTO `maquina` (`id`, `tag`, `modelo`, `tipo`, `processador`, `memoria`, `armazenamento`, `tipo_armazenamento`, `sistema_operacional`, `nfcompra`, `datacompra`, `distribuidora`, `nfgarantia`, `datagarantia`, `statusmaq`) VALUES
+(1, 'PE0477WF', 'LENOVO V520S', 'DESKTOP', 'INTEL CORE I5', '8 GB', '240 GB', 'SSD', 'MICROSOFT WINDOWS 10', '-', '23/05/2019', '-', '-', '22/05/2020', 'ATIVO'),
+(3, 'PE0543T6', 'LENOVO THINKPAD E490', 'NOTEBOOK', 'INTEL CORE I5', '8 GB', '240 GB', 'SSD', 'MICROSOFT WINDOWS 10', '-', '18/12/2019', '-', '-', '17/12/2022', 'ATIVO');
 
 -- --------------------------------------------------------
 
@@ -80,6 +112,7 @@ INSERT INTO `modelo_maquina` (`id`, `modelo_maquina`) VALUES
 (24, 'DELL VOSTRO 220S'),
 (25, 'DELL VOSTRO 3460'),
 (28, 'LENOVO IDEIAPAD B320'),
+(30, 'LENOVO THINKPAD E490'),
 (29, 'LENOVO THINKPAD T440P'),
 (3, 'LENOVO V520S'),
 (27, 'LENOVO W10 S510'),
@@ -421,6 +454,13 @@ INSERT INTO `wlan` (`id`, `wlan`) VALUES
 --
 
 --
+-- Indexes for table `maquina`
+--
+ALTER TABLE `maquina`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `tag` (`tag`);
+
+--
 -- Indexes for table `modelo_impressora`
 --
 ALTER TABLE `modelo_impressora`
@@ -495,10 +535,16 @@ ALTER TABLE `wlan`
 --
 
 --
+-- AUTO_INCREMENT for table `maquina`
+--
+ALTER TABLE `maquina`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `modelo_impressora`
 --
 ALTER TABLE `modelo_impressora`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `modelo_maquina`
@@ -510,19 +556,19 @@ ALTER TABLE `modelo_maquina`
 -- AUTO_INCREMENT for table `modelo_ms_office`
 --
 ALTER TABLE `modelo_ms_office`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `modelo_ramal`
 --
 ALTER TABLE `modelo_ramal`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `processador`
 --
 ALTER TABLE `processador`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `setor`
@@ -534,19 +580,19 @@ ALTER TABLE `setor`
 -- AUTO_INCREMENT for table `sistema_operacional`
 --
 ALTER TABLE `sistema_operacional`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tipo_maquina`
 --
 ALTER TABLE `tipo_maquina`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `wlan`
 --
 ALTER TABLE `wlan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
