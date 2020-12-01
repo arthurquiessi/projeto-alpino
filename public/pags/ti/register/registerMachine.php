@@ -1,7 +1,7 @@
 <?php
     include_once("../../../../src/config/conexaodb.php");
 
-    $sql_maquina = mysqli_query($conn, "SELECT * FROM maquina");
+    $sql_maquina = mysqli_query($conn, "SELECT * FROM maquina ORDER BY tag");
 
     $sql_modelo_maquina = mysqli_query($conn, "SELECT * FROM modelo_maquina");
     $sql_modelo_maquina_edit = mysqli_query($conn, "SELECT * FROM modelo_maquina");

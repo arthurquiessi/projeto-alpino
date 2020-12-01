@@ -27,7 +27,7 @@ $edit = "UPDATE `maquina` SET tag = '$tag', modelo = '$modelo', tipo = '$tipo',
 $result = mysqli_query($conn, $edit);
 
 if(mysqli_affected_rows($conn) != 0){
-    echo "<script type=\"text/javascript\">alert(\"tag '$tag' alterada com sucesso\");</script>";
+    echo "<script type=\"text/javascript\">alert(\"Tag '$tag' alterada com sucesso\");</script>";
     echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../../../../public/pags/ti/register/registerMachine.php'>";
             
 }else{

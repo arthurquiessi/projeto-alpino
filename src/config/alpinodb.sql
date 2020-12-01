@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Nov 27, 2020 at 07:52 PM
+-- Generation Time: Dec 01, 2020 at 07:43 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -162,6 +162,28 @@ INSERT INTO `modelo_ramal` (`id`, `modelo_ramal`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `msoffice`
+--
+
+CREATE TABLE `msoffice` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `inicio` varchar(10) NOT NULL,
+  `chave_produto` varchar(100) NOT NULL,
+  `versao_office` varchar(100) NOT NULL,
+  `statusoffice` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `msoffice`
+--
+
+INSERT INTO `msoffice` (`id`, `inicio`, `chave_produto`, `versao_office`, `statusoffice`) VALUES
+(3, 'L.L.O', 'LINUX LIBRE OFFICE', 'LINUX  LIBRE OFFICE', 'ATIVO'),
+(4, 'OFF 365', 'MICROSOFT OFFICE 365', 'MICROSOFT OFFICE 365', 'ATIVO');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `processador`
 --
 
@@ -182,6 +204,26 @@ INSERT INTO `processador` (`id`, `processador`) VALUES
 (4, 'INTEL CORE PENTIUM'),
 (6, 'INTEL DUAL CORE'),
 (10, 'INTEL XEON');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ramal`
+--
+
+CREATE TABLE `ramal` (
+  `ip` int(10) UNSIGNED NOT NULL,
+  `ramal` varchar(100) NOT NULL,
+  `modelo_ramal` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ramal`
+--
+
+INSERT INTO `ramal` (`ip`, `ramal`, `modelo_ramal`) VALUES
+(29, 'IP129 - 9129', 'YEALINK SIP-T19P E2'),
+(76, 'IP176 - 9176', 'YEALINK SIP-T19P E2');
 
 -- --------------------------------------------------------
 
@@ -225,6 +267,7 @@ INSERT INTO `setor` (`id`, `setor`) VALUES
 (19, 'RECEPÇÃO'),
 (18, 'RECURSOS HUMANOS'),
 (23, 'SALA CLEAN'),
+(35, 'SALA DE TREINAMENTO'),
 (16, 'SGI'),
 (25, 'SOLDA'),
 (2, 'TECNOLOGIA DA INFORMAÇÃO'),
@@ -346,7 +389,6 @@ INSERT INTO `usuario` (`ip`, `usuario`, `setor`, `homeOffice`) VALUES
 (53, 'LEANDRO NOGUEIRA', 'SGI', 'NÃO'),
 (54, 'TACIO CAMPOS', 'QUALIDADE', 'NÃO'),
 (55, 'CLAUDIO SOUZA', 'ENGENHARIA', 'NÃO'),
-(56, 'LIVRE', '', ''),
 (57, 'PAULO PAMPLONA', 'GERENTE CONTROLADORIA', 'SIM'),
 (58, 'LEANDRO FERRARI', 'LABORATÓRIO', 'NÃO'),
 (59, 'SERGIO ALONSO', 'DIRETORIA', 'NÃO'),
@@ -384,11 +426,18 @@ INSERT INTO `usuario` (`ip`, `usuario`, `setor`, `homeOffice`) VALUES
 (91, 'FOLHA DE PONTO', '', ''),
 (92, 'FOLHA DE PONTO', '', ''),
 (93, 'CATRACA COZINHA', '', ''),
+(94, 'FOLHA DE PONTO', '', ''),
 (95, 'CURVADEIRA', 'CURVADEIRA', ''),
 (96, 'SOLDA', 'SOLDA', ''),
 (97, 'ALMOXARIFADO', 'ALMOXARIFADO', ''),
 (98, 'FERRAMENTARIA', 'FERRAMENTARIA', ''),
+(99, 'SALA DE TREINAMENTO PROV.', 'SALA DE TREINAMENTO', ''),
 (100, 'LIVRE', '', ''),
+(101, 'LIVRE', '', ''),
+(102, 'LIVRE', '', ''),
+(103, 'LIVRE', '', ''),
+(104, 'LIVRE', '', ''),
+(105, 'LIVRE', '', ''),
 (191, 'COLETOR 1', '', ''),
 (192, 'COLETOR 2', '', ''),
 (210, 'IMPRESSORA', '', ''),
@@ -489,11 +538,27 @@ ALTER TABLE `modelo_ramal`
   ADD UNIQUE KEY `modelo_ramal` (`modelo_ramal`);
 
 --
+-- Indexes for table `msoffice`
+--
+ALTER TABLE `msoffice`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `inicio` (`inicio`),
+  ADD UNIQUE KEY `chave_produto` (`chave_produto`);
+
+--
 -- Indexes for table `processador`
 --
 ALTER TABLE `processador`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `processador` (`processador`);
+
+--
+-- Indexes for table `ramal`
+--
+ALTER TABLE `ramal`
+  ADD PRIMARY KEY (`ip`),
+  ADD UNIQUE KEY `ip` (`ip`),
+  ADD UNIQUE KEY `ramal` (`ramal`);
 
 --
 -- Indexes for table `setor`
@@ -538,7 +603,7 @@ ALTER TABLE `wlan`
 -- AUTO_INCREMENT for table `maquina`
 --
 ALTER TABLE `maquina`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `modelo_impressora`
@@ -565,16 +630,28 @@ ALTER TABLE `modelo_ramal`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `msoffice`
+--
+ALTER TABLE `msoffice`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `processador`
 --
 ALTER TABLE `processador`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `ramal`
+--
+ALTER TABLE `ramal`
+  MODIFY `ip` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+
+--
 -- AUTO_INCREMENT for table `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `sistema_operacional`

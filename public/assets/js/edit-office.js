@@ -1,0 +1,16 @@
+$('#editar').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var id = button.data('id')
+    var inicio = button.data('inicio')
+    var chave_produto = button.data('chave_produto')
+    var versao_office = button.data('versao_office')
+    var statusoffice = button.data('statusoffice')
+    var modal = $(this)
+
+    modal.find('.modal-title').text('Editar office início: ' + inicio)
+    modal.find('#id').val(id)
+    modal.find('#inicio').val(inicio)
+    modal.find('#chave_produto').val(chave_produto)
+    modal.find('#versao_office').val(versao_office)
+    modal.find('#statusoffice').val(statusoffice)
+})

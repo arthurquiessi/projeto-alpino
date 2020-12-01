@@ -7,7 +7,7 @@ $usuario = $_POST['inputUsuario'];
 $setor = $_POST['inputSetor'];
 $homeOffice = $_POST['inputHomeOffice'];
 
-$edit = "UPDATE `usuario` SET usuario = '$usuario', setor = '$setor', homeOffice = '$homeOffice' WHERE ip = '$ip'";
+$edit = "UPDATE `usuario` SET ip = '$ip', usuario = '$usuario', setor = '$setor', homeOffice = '$homeOffice' WHERE ip = '$ip'";
 $result = mysqli_query($conn, $edit);
 
 if(mysqli_affected_rows($conn) != 0){

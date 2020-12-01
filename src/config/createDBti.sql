@@ -25,3 +25,23 @@ create table maquina (
     UNIQUE KEY (tag),
     PRIMARY KEY (id)
 );
+
+create table msOffice (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    inicio varchar(10) NOT NULL,
+    chave_produto varchar(100) NOT NULL,
+    versao_office varchar(100) NOT NULL,
+    statusoffice varchar(100) NOT NULL,
+    UNIQUE KEY(inicio),
+    UNIQUE KEY(chave_produto),
+    PRIMARY KEY(id)
+);
+
+create table ramal (
+    ip INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    ramal varchar(100) NOT NULL,
+    modelo_ramal varchar(100) NOT NULL,
+    UNIQUE KEY(ip),
+    UNIQUE KEY(ramal),
+    PRIMARY KEY(ip)
+);

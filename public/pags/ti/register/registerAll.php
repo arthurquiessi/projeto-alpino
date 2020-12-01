@@ -89,6 +89,11 @@
                                                 <input type="text" class="form-control" id="inputArmazenamento"
                                                     disabled>
                                             </div>
+                                            <div class="form-group col-md-2">
+                                                <label for="inputTipoArmazenamento">Tipo Armazenagem</label>
+                                                <input type="text" class="form-control" id="inputTipoArmazenamento"
+                                                    disabled>
+                                            </div>
                                             <div class="form-group col-md-3">
                                                 <label for="inputSo">Sistema Operacional</label>
                                                 <input type="text" class="form-control" id="inputSo" disabled>
