@@ -45,3 +45,7 @@ create table ramal (
     UNIQUE KEY(ramal),
     PRIMARY KEY(ip)
 );
+
+create table geral (
+    
+);
