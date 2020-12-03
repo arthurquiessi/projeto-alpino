@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Dec 01, 2020 at 07:43 PM
+-- Generation Time: Dec 03, 2020 at 07:44 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -496,7 +496,8 @@ CREATE TABLE `wlan` (
 INSERT INTO `wlan` (`id`, `wlan`) VALUES
 (1, '192.168.1.'),
 (2, '192.168.2.'),
-(3, '192.168.3.');
+(3, '192.168.3.'),
+(4, '192.168.4.');
 
 --
 -- Indexes for dumped tables
@@ -633,7 +634,7 @@ ALTER TABLE `modelo_ramal`
 -- AUTO_INCREMENT for table `msoffice`
 --
 ALTER TABLE `msoffice`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `processador`
@@ -669,7 +670,7 @@ ALTER TABLE `tipo_maquina`
 -- AUTO_INCREMENT for table `wlan`
 --
 ALTER TABLE `wlan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

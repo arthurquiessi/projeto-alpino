@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Geral - T.I</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <!-- BootStrap CSS-->
     <link rel="stylesheet" href="../../../../node_modules/bootstrap/dist/css/bootstrap.css">
@@ -18,22 +19,6 @@
 </head>
 
 <body class="bg-light">
-    <script>
-    $(document).ready(function() {
-        $("input[name='inputIp']").blur(function() {
-            var $usuario = $("input[name='inputUsuario']");
-            var $setor = $("input[name='inputSetor']");
-            var $homeOffice = $("input[name='inputHomeOffice']");
-            $.getJSON('functionUsuario.php', {
-                inputIp: $(this).val()
-            }, function(json) {
-                $usuario.val(json.usuario);
-                $setor.val(json.setor);
-                $homeOffice.val(json.homeOffice);
-            });
-        });
-    });
-    </script>
     <?php 
         include '../include/nav_register.php';
     ?>
@@ -53,34 +38,34 @@
                             <h5 class="card-title">USUÁRIOS</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="../../../../src/db/ti/geral/insert.php" method="POST">
+                                    <form action="" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-3">
                                                 <label for="inputWlan">Wlan</label>
-                                                <input type="text" name="inputWlan" class="form-control" id="inputWlan"
+                                                <input type="text" name="inputWlan" class="form-control" id="wlan"
                                                     placeholder="192.168.1." disabled>
                                             </div>
                                             <div class="form-group col-md-1">
                                                 <label for="inputIp">IP</label>
-                                                <input type="text" name="inputIp" class="form-control" id="inputIp"
+                                                <input type="text" name="inputIp" class="form-control" id="ip"
                                                     placeholder="IP">
                                             </div>
                                             <div class="form-group col-md-5">
                                                 <label for="inputUsuario">Usuário</label>
-                                                <input type="text" name="inputUsuario" class="form-control"
-                                                    id="inputUsuario" disabled>
+                                                <input type="text" name="inputUsuario" class="form-control" id="usuario"
+                                                    disabled>
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-4">
                                                 <label for="inputSetor">Setor</label>
-                                                <input type="text" name="inputSetor" class="form-control"
-                                                    id="inputSetor" disabled>
+                                                <input type="text" name="inputSetor" class="form-control" id="setor"
+                                                    disabled>
                                             </div>
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-2">
                                                 <label for="inputHomeOffice">Home Office</label>
                                                 <input type="text" name="inputHomeOffice" class="form-control"
-                                                    id="inputHomeOffice" disabled>
+                                                    id="homeOffice" disabled>
                                             </div>
                                         </div>
                                         <div class="pt-3">
@@ -184,15 +169,15 @@
                                                     <?php } ?>
                                                 </select>
                                             </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputSerial">Product Key do Office</label>
+                                                <input type="text" name="inputSerial" class="form-control"
+                                                    id="inputSerial" disabled>
+                                            </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputVersao">Versão do Office</label>
                                                 <input type="text" name="inputVersao" class="form-control"
                                                     id="inputVersao" disabled>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputSerial">Product Key do Office</label>
-                                                <input type="text" name="inputSerial" class="form-control"
-                                                    id="inputTipo" disabled>
                                             </div>
                                         </div>
                                         <div class="pt-3">
@@ -205,9 +190,9 @@
                                                     id="inputWlan1" placeholder="192.168.2." disabled>
                                             </div>
                                             <div class="form-group col-md-1">
-                                                <label for="inputIp1">IP</label>
-                                                <input type="text" name="inputIp1" class="form-control" id="inputIp1"
-                                                    placeholder="IP">
+                                                <label for="inputIpRamal">IP</label>
+                                                <input type="text" name="inputIpRamal" class="form-control"
+                                                    id="inputIpRamal" placeholder="IP">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputRamal">Nº Ramal</label>
@@ -237,13 +222,12 @@
             </div>
         </div>
         <!-- Bootstrap/Jquery/Popper.js -->
-        <script src="../../../../node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="../../../../node_modules/popper.js/dist/popper.min.js"></script>
         <script src="../../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="../../../../public/assets/js/personalizado.js"></script>
-        <!-- <script src="../../assets/js/"></script> -->
-
+        <script src="../../../../public/assets/js/function-usuarios.js"></script>
+        <script src="../../../../public/assets/js/function-maquina.js"></script>
+        <script src="../../../../public/assets/js/function-office.js"></script>
+        <script src="../../../../public/assets/js/function-ramal.js"></script>
 </body>
 
 </html>

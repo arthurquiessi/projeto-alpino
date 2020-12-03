@@ -10,7 +10,7 @@ function retorna($ip, $conn) {
         $valores['setor'] = $row_usuario['setor'];
         $valores['homeOffice'] = $row_usuario['homeOffice'];
     } else {
-        $valores['usuario'] = 'Informações não encontradas';
+        $valores['usuario'] = 'Ip sem Cadastro!!';
     }
 
     return json_encode($valores);
