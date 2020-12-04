@@ -93,15 +93,17 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <table id="tabelaMaquina" class="table">
                     <caption>Office's cadastradas</caption>
                     <thead>
-                        <th scope="col">INICIO</th>
-                        <th scope="col">CHAVE DO PRODUTO</th>
-                        <th scope="col">VERSÃO DO PRODUTO</th>
-                        <th scope="col">STATUS</th>
-                        <th scope="col">BOTÃO</th>
+                        <tr class="table-info">
+                            <th scope="col">INICIO</th>
+                            <th scope="col">CHAVE DO PRODUTO</th>
+                            <th scope="col">VERSÃO DO PRODUTO</th>
+                            <th scope="col">STATUS</th>
+                            <th scope="col">BOTÃO</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <?php while($linha_tabela = mysqli_fetch_assoc($sql_office)) { ?>

@@ -105,6 +105,7 @@
                                                     <option value="" selected>Escolher...</option>
                                                     <option value="HDD">HDD</option>
                                                     <option value="SSD">SSD</option>
+                                                    <option value="HDD E SSD">HDD E SSD</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-3">
@@ -181,62 +182,66 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-10">
-                <table id="tabelaMaquina" class="table">
-                    <caption>Máquinas cadastradas</caption>
-                    <thead>
-                        <th scope="col">TAG</th>
-                        <th scope="col">MODELO DA MÁQUINA</th>
-                        <th scope="col">TIPO DA MÁQUINA</th>
-                        <th scope="col">GARANTIA</th>
-                        <th scope="col">STATUS</th>
-                        <th scope="col">BOTÃO</th>
-                    </thead>
-                    <tbody>
-                        <?php while($linha_tabela = mysqli_fetch_assoc($sql_maquina)) { ?>
-                        <tr>
-                            <td>
-                                <?php echo $linha_tabela['tag']; ?>
-                            </td>
-                            <td>
-                                <?php echo $linha_tabela['modelo']; ?>
-                            </td>
-                            <td>
-                                <?php echo $linha_tabela['tipo']; ?>
-                            </td>
-                            <td>
-                                <?php echo $linha_tabela['datagarantia']; ?>
-                            </td>
-                            <td>
-                                <?php echo $linha_tabela['statusmaq']; ?>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal"
-                                    data-target="#editar" data-id="<?php echo $linha_tabela['id']; ?>"
-                                    data-tag="<?php echo $linha_tabela['tag']; ?>"
-                                    data-modelo="<?php echo $linha_tabela['modelo']; ?>"
-                                    data-tipo="<?php echo $linha_tabela['tipo']; ?>"
-                                    data-processador="<?php echo $linha_tabela['processador']; ?>"
-                                    data-memoria="<?php echo $linha_tabela['memoria']; ?>"
-                                    data-armazenamento="<?php echo $linha_tabela['armazenamento']; ?>"
-                                    data-tipo_armazenamento="<?php echo $linha_tabela['tipo_armazenamento']; ?>"
-                                    data-sistema_operacional="<?php echo $linha_tabela['sistema_operacional']; ?>"
-                                    data-nfcompra="<?php echo $linha_tabela['nfcompra']; ?>"
-                                    data-datacompra="<?php echo $linha_tabela['datacompra']; ?>"
-                                    data-distribuidora="<?php echo $linha_tabela['distribuidora']; ?>"
-                                    data-nfgarantia="<?php echo $linha_tabela['nfgarantia']; ?>"
-                                    data-datagarantia="<?php echo $linha_tabela['datagarantia']; ?>"
-                                    data-statusmaq="<?php echo $linha_tabela['statusmaq']; ?>">Editar
-                                </button>
-                                <a
-                                    href="../../../../src/db/ti/maquinas/delete.php?id=<?php echo $linha_tabela['id']; ?>">
-                                    <button type="button" class="btn btn-outline-danger btn-sm">Excluir</button>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+            <div class="col-md-12">
+                <div>
+                    <table id="tabelaMaquina" class="table">
+                        <caption>Máquinas cadastradas</caption>
+                        <thead>
+                            <tr class="table-info">
+                                <th scope="col">TAG</th>
+                                <th scope="col">MODELO DA MÁQUINA</th>
+                                <th scope="col">TIPO DA MÁQUINA</th>
+                                <th scope="col">GARANTIA</th>
+                                <th scope="col">STATUS</th>
+                                <th scope="col">BOTÃO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while($linha_tabela = mysqli_fetch_assoc($sql_maquina)) { ?>
+                            <tr>
+                                <td>
+                                    <?php echo $linha_tabela['tag']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $linha_tabela['modelo']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $linha_tabela['tipo']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $linha_tabela['datagarantia']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $linha_tabela['statusmaq']; ?>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal"
+                                        data-target="#editar" data-id="<?php echo $linha_tabela['id']; ?>"
+                                        data-tag="<?php echo $linha_tabela['tag']; ?>"
+                                        data-modelo="<?php echo $linha_tabela['modelo']; ?>"
+                                        data-tipo="<?php echo $linha_tabela['tipo']; ?>"
+                                        data-processador="<?php echo $linha_tabela['processador']; ?>"
+                                        data-memoria="<?php echo $linha_tabela['memoria']; ?>"
+                                        data-armazenamento="<?php echo $linha_tabela['armazenamento']; ?>"
+                                        data-tipo_armazenamento="<?php echo $linha_tabela['tipo_armazenamento']; ?>"
+                                        data-sistema_operacional="<?php echo $linha_tabela['sistema_operacional']; ?>"
+                                        data-nfcompra="<?php echo $linha_tabela['nfcompra']; ?>"
+                                        data-datacompra="<?php echo $linha_tabela['datacompra']; ?>"
+                                        data-distribuidora="<?php echo $linha_tabela['distribuidora']; ?>"
+                                        data-nfgarantia="<?php echo $linha_tabela['nfgarantia']; ?>"
+                                        data-datagarantia="<?php echo $linha_tabela['datagarantia']; ?>"
+                                        data-statusmaq="<?php echo $linha_tabela['statusmaq']; ?>">Editar
+                                    </button>
+                                    <a
+                                        href="../../../../src/db/ti/maquinas/delete.php?id=<?php echo $linha_tabela['id']; ?>">
+                                        <button type="button" class="btn btn-outline-danger btn-sm">Excluir</button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -331,6 +336,7 @@
                                         <option value="" selected>Escolher...</option>
                                         <option value="HDD">HDD</option>
                                         <option value="SSD">SSD</option>
+                                        <option value="HDD E SSD">HDD E SSD</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-3">

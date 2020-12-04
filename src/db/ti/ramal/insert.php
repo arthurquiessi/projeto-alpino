@@ -6,7 +6,7 @@ $ip = $_POST['inputIp'];
 $ramal = $_POST['inputRamal'];
 $modelo_ramal = $_POST['inputModeloRamal'];
 
-$coleta = mysqli_query($conn, "SELECT * FROM ramal WHERE ramal = '{$ramal}'");
+$coleta = mysqli_query($conn, "SELECT * FROM ramal WHERE ip = '{$ip}'");
 
 if(mysqli_num_rows($coleta) == 0) {
     $cadastro = "INSERT INTO `ramal` (`ip`, `ramal`, `modelo_ramal`) VALUES ('$ip', '$ramal', '$modelo_ramal')";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Dec 03, 2020 at 07:44 PM
+-- Generation Time: Dec 04, 2020 at 07:45 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -19,8 +19,39 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `alpinodb`
+-- Database: `alpinodbteste`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `geral`
+--
+
+CREATE TABLE `geral` (
+  `ip` int(10) UNSIGNED NOT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `setor` varchar(100) NOT NULL,
+  `homeOffice` varchar(10) NOT NULL,
+  `tag` varchar(100) NOT NULL,
+  `modelo` varchar(100) NOT NULL,
+  `tipo` varchar(100) NOT NULL,
+  `processador` varchar(100) NOT NULL,
+  `memoria` varchar(100) NOT NULL,
+  `armazenamento` varchar(100) NOT NULL,
+  `sistema_operacional` varchar(100) NOT NULL,
+  `nfcompra` varchar(100) NOT NULL,
+  `datacompra` varchar(100) NOT NULL,
+  `distribuidora` varchar(100) NOT NULL,
+  `nfgarantia` varchar(100) NOT NULL,
+  `datagarantia` varchar(100) NOT NULL,
+  `inicio` varchar(10) NOT NULL,
+  `chave_produto` varchar(100) NOT NULL,
+  `versao_office` varchar(100) NOT NULL,
+  `ipRamal` varchar(10) NOT NULL,
+  `ramal` varchar(100) NOT NULL,
+  `modelo_ramal` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -52,7 +83,8 @@ CREATE TABLE `maquina` (
 
 INSERT INTO `maquina` (`id`, `tag`, `modelo`, `tipo`, `processador`, `memoria`, `armazenamento`, `tipo_armazenamento`, `sistema_operacional`, `nfcompra`, `datacompra`, `distribuidora`, `nfgarantia`, `datagarantia`, `statusmaq`) VALUES
 (1, 'PE0477WF', 'LENOVO V520S', 'DESKTOP', 'INTEL CORE I5', '8 GB', '240 GB', 'SSD', 'MICROSOFT WINDOWS 10', '-', '23/05/2019', '-', '-', '22/05/2020', 'ATIVO'),
-(3, 'PE0543T6', 'LENOVO THINKPAD E490', 'NOTEBOOK', 'INTEL CORE I5', '8 GB', '240 GB', 'SSD', 'MICROSOFT WINDOWS 10', '-', '18/12/2019', '-', '-', '17/12/2022', 'ATIVO');
+(3, 'PE0543T6', 'LENOVO THINKPAD E490', 'NOTEBOOK', 'INTEL CORE I5', '8 GB', '240 GB', 'SSD', 'MICROSOFT WINDOWS 10', '-', '18/12/2019', '-', '-', '17/12/2022', 'ATIVO'),
+(4, '6WBKQX1', 'DELL POWER EDGE T440', 'SERVIDOR', 'INTEL XEON', '32 GB', '2 TB', 'HDD E SSD', 'MICROSOFT WINDOWS SERVER 2019', '-', '28/06/2020', 'DELL', '-', '28/06/2022', 'ATIVO');
 
 -- --------------------------------------------------------
 
@@ -106,6 +138,7 @@ INSERT INTO `modelo_maquina` (`id`, `modelo_maquina`) VALUES
 (18, 'DELL OPTIPLEX GX 260'),
 (19, 'DELL OPTIPLEX GX 620'),
 (6, 'DELL POWER EDGE T410'),
+(32, 'DELL POWER EDGE T440'),
 (20, 'DELL PRECISION T3500'),
 (22, 'DELL PRECISION T3600'),
 (23, 'DELL VOSTRO 1014'),
@@ -157,6 +190,8 @@ CREATE TABLE `modelo_ramal` (
 --
 
 INSERT INTO `modelo_ramal` (`id`, `modelo_ramal`) VALUES
+(7, 'GRANDSTREAM DP722'),
+(6, 'GRANDSTREAM GXP1628'),
 (5, 'YEALINK SIP-T19P E2');
 
 -- --------------------------------------------------------
@@ -222,8 +257,106 @@ CREATE TABLE `ramal` (
 --
 
 INSERT INTO `ramal` (`ip`, `ramal`, `modelo_ramal`) VALUES
+(1, 'IP101 - 9101', 'YEALINK SIP-T19P E2'),
+(2, 'IP102 - 9102', 'YEALINK SIP-T19P E2'),
+(3, 'IP103 - 9103', 'YEALINK SIP-T19P E2'),
+(4, 'IP104 - 9104', 'YEALINK SIP-T19P E2'),
+(5, 'IP105 - 9105', 'YEALINK SIP-T19P E2'),
+(6, 'IP106 - 9106', 'YEALINK SIP-T19P E2'),
+(7, 'IP107 - 9107', 'GRANDSTREAM GXP1628'),
+(8, 'IP108 - 9108', 'YEALINK SIP-T19P E2'),
+(9, 'IP109 - 9109', 'YEALINK SIP-T19P E2'),
+(10, 'IP110 - 9110', 'YEALINK SIP-T19P E2'),
+(11, 'IP111 - 9111', 'YEALINK SIP-T19P E2'),
+(12, 'IP112 - 9112', 'YEALINK SIP-T19P E2'),
+(13, 'IP113 - 9113', 'YEALINK SIP-T19P E2'),
+(14, 'IP114 - 9114', 'YEALINK SIP-T19P E2'),
+(15, 'IP115 - 9115', 'YEALINK SIP-T19P E2'),
+(16, 'IP116 - 9116', 'YEALINK SIP-T19P E2'),
+(17, 'IP117 - 9117', 'YEALINK SIP-T19P E2'),
+(18, 'IP118 - 9118', 'YEALINK SIP-T19P E2'),
+(19, 'IP119 - 9119', 'YEALINK SIP-T19P E2'),
+(20, 'IP120 - 9120', 'YEALINK SIP-T19P E2'),
+(21, 'IP121 - 9121', 'YEALINK SIP-T19P E2'),
+(22, 'IP122 - 9122', 'YEALINK SIP-T19P E2'),
+(23, 'IP123 - 9123', 'YEALINK SIP-T19P E2'),
+(24, 'IP124 - 9124', 'YEALINK SIP-T19P E2'),
+(25, 'IP125 - 9125', 'YEALINK SIP-T19P E2'),
+(26, 'IP126 - 9126', 'YEALINK SIP-T19P E2'),
+(27, 'IP127 - 9127', 'YEALINK SIP-T19P E2'),
+(28, 'IP128 - 9128', 'YEALINK SIP-T19P E2'),
 (29, 'IP129 - 9129', 'YEALINK SIP-T19P E2'),
-(76, 'IP176 - 9176', 'YEALINK SIP-T19P E2');
+(30, 'IP130 - 9130', 'YEALINK SIP-T19P E2'),
+(31, 'IP131 - 9131', 'YEALINK SIP-T19P E2'),
+(32, 'IP132 - 9132', 'YEALINK SIP-T19P E2'),
+(33, 'IP133 - 9133', 'YEALINK SIP-T19P E2'),
+(34, 'IP134 - 9134', 'YEALINK SIP-T19P E2'),
+(35, 'IP135 - 9135', 'YEALINK SIP-T19P E2'),
+(36, 'IP136 - 9136', 'YEALINK SIP-T19P E2'),
+(37, 'IP137 - 9137', 'YEALINK SIP-T19P E2'),
+(38, 'IP138 - 9138', 'YEALINK SIP-T19P E2'),
+(39, 'IP139 - 9139', 'YEALINK SIP-T19P E2'),
+(40, 'IP140 - 9140', 'GRANDSTREAM DP722'),
+(41, 'IP141 - 9141', 'YEALINK SIP-T19P E2'),
+(42, 'IP142 - 9142', 'YEALINK SIP-T19P E2'),
+(43, 'IP143 - 9143', 'YEALINK SIP-T19P E2'),
+(44, 'IP144 - 9144', 'YEALINK SIP-T19P E2'),
+(45, 'IP145 - 9145', 'YEALINK SIP-T19P E2'),
+(46, 'IP146 - 9146', 'YEALINK SIP-T19P E2'),
+(47, 'IP147 - 9147', 'YEALINK SIP-T19P E2'),
+(48, 'IP148 - 9148', 'YEALINK SIP-T19P E2'),
+(49, 'IP149 - 9149', 'YEALINK SIP-T19P E2'),
+(50, 'IP150 - 9150', 'YEALINK SIP-T19P E2'),
+(51, 'IP151 - 9151', 'YEALINK SIP-T19P E2'),
+(52, 'IP152 - 9152', 'YEALINK SIP-T19P E2'),
+(53, 'IP153 - 9153', 'YEALINK SIP-T19P E2'),
+(54, 'IP154 - 9154', 'YEALINK SIP-T19P E2'),
+(55, 'IP155 - 9155', 'YEALINK SIP-T19P E2'),
+(56, 'IP156 - 9156', 'YEALINK SIP-T19P E2'),
+(57, 'IP157 - 9157', 'YEALINK SIP-T19P E2'),
+(58, 'IP158 - 9158', 'GRANDSTREAM GXP1628'),
+(59, 'IP159 - 9159', 'YEALINK SIP-T19P E2'),
+(60, 'IP160 - 9160', 'YEALINK SIP-T19P E2'),
+(61, 'IP161 - 9161', 'YEALINK SIP-T19P E2'),
+(62, 'IP162 - 9162', 'YEALINK SIP-T19P E2'),
+(63, 'IP163 - 9163', 'YEALINK SIP-T19P E2'),
+(64, 'IP164 - 9164', 'YEALINK SIP-T19P E2'),
+(65, 'IP165 - 9165', 'YEALINK SIP-T19P E2'),
+(66, 'IP166 - 9166', 'YEALINK SIP-T19P E2'),
+(67, 'IP167 - 9167', 'YEALINK SIP-T19P E2'),
+(68, 'IP168 - 9168', 'YEALINK SIP-T19P E2'),
+(69, 'IP169 - 9169', 'YEALINK SIP-T19P E2'),
+(70, 'IP170 - 9170', 'YEALINK SIP-T19P E2'),
+(71, 'IP171 - 9171', 'YEALINK SIP-T19P E2'),
+(72, 'IP172 - 9172', 'YEALINK SIP-T19P E2'),
+(73, 'IP173 - 9173', 'YEALINK SIP-T19P E2'),
+(74, 'IP174 - 9174', 'YEALINK SIP-T19P E2'),
+(75, 'IP175 - 9175', 'YEALINK SIP-T19P E2'),
+(76, 'IP176 - 9176', 'YEALINK SIP-T19P E2'),
+(77, 'IP177 - 9177', 'YEALINK SIP-T19P E2'),
+(78, 'IP178 - 9178', 'YEALINK SIP-T19P E2'),
+(79, 'IP179 - 9179', 'YEALINK SIP-T19P E2'),
+(80, 'IP180 - 9180', 'YEALINK SIP-T19P E2'),
+(81, 'IP181 - 9181', 'YEALINK SIP-T19P E2'),
+(82, 'IP182 - 9182', 'YEALINK SIP-T19P E2'),
+(83, 'IP183 - 9183', 'YEALINK SIP-T19P E2'),
+(84, 'IP184 - 9184', 'YEALINK SIP-T19P E2'),
+(85, 'IP185 - 9185', 'YEALINK SIP-T19P E2'),
+(86, 'IP186 - 9186', 'YEALINK SIP-T19P E2'),
+(87, 'IP187 - 9187', 'YEALINK SIP-T19P E2'),
+(88, 'IP188 - 9188', 'YEALINK SIP-T19P E2'),
+(89, 'IP189 - 9189', 'YEALINK SIP-T19P E2'),
+(90, 'IP190 - 9190', 'YEALINK SIP-T19P E2'),
+(91, 'IP191 - 9191', 'YEALINK SIP-T19P E2'),
+(92, 'IP192 - 9192', 'YEALINK SIP-T19P E2'),
+(93, 'IP193 - 9193', 'YEALINK SIP-T19P E2'),
+(94, 'IP194 - 9194', 'YEALINK SIP-T19P E2'),
+(95, 'IP195 - 9195', 'YEALINK SIP-T19P E2'),
+(96, 'IP196 - 9196', 'YEALINK SIP-T19P E2'),
+(97, 'IP197 - 9197', 'YEALINK SIP-T19P E2'),
+(98, 'IP198 - 9198', 'YEALINK SIP-T19P E2'),
+(99, 'IP199 - 9199', 'YEALINK SIP-T19P E2'),
+(100, 'IP100 - 9100', 'YEALINK SIP-T19P E2');
 
 -- --------------------------------------------------------
 
@@ -389,6 +522,7 @@ INSERT INTO `usuario` (`ip`, `usuario`, `setor`, `homeOffice`) VALUES
 (53, 'LEANDRO NOGUEIRA', 'SGI', 'NÃO'),
 (54, 'TACIO CAMPOS', 'QUALIDADE', 'NÃO'),
 (55, 'CLAUDIO SOUZA', 'ENGENHARIA', 'NÃO'),
+(56, 'SIMONE TAVARES PROVISÓRIO', 'COMPRAS', 'NÃO'),
 (57, 'PAULO PAMPLONA', 'GERENTE CONTROLADORIA', 'SIM'),
 (58, 'LEANDRO FERRARI', 'LABORATÓRIO', 'NÃO'),
 (59, 'SERGIO ALONSO', 'DIRETORIA', 'NÃO'),
@@ -504,6 +638,15 @@ INSERT INTO `wlan` (`id`, `wlan`) VALUES
 --
 
 --
+-- Indexes for table `geral`
+--
+ALTER TABLE `geral`
+  ADD PRIMARY KEY (`ip`),
+  ADD UNIQUE KEY `ip` (`ip`),
+  ADD UNIQUE KEY `tag` (`tag`),
+  ADD UNIQUE KEY `inicio` (`inicio`);
+
+--
 -- Indexes for table `maquina`
 --
 ALTER TABLE `maquina`
@@ -558,8 +701,7 @@ ALTER TABLE `processador`
 --
 ALTER TABLE `ramal`
   ADD PRIMARY KEY (`ip`),
-  ADD UNIQUE KEY `ip` (`ip`),
-  ADD UNIQUE KEY `ramal` (`ramal`);
+  ADD UNIQUE KEY `ip` (`ip`);
 
 --
 -- Indexes for table `setor`
@@ -601,10 +743,16 @@ ALTER TABLE `wlan`
 --
 
 --
+-- AUTO_INCREMENT for table `geral`
+--
+ALTER TABLE `geral`
+  MODIFY `ip` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `maquina`
 --
 ALTER TABLE `maquina`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `modelo_impressora`
@@ -616,7 +764,7 @@ ALTER TABLE `modelo_impressora`
 -- AUTO_INCREMENT for table `modelo_maquina`
 --
 ALTER TABLE `modelo_maquina`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `modelo_ms_office`
@@ -628,7 +776,7 @@ ALTER TABLE `modelo_ms_office`
 -- AUTO_INCREMENT for table `modelo_ramal`
 --
 ALTER TABLE `modelo_ramal`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `msoffice`
@@ -646,7 +794,7 @@ ALTER TABLE `processador`
 -- AUTO_INCREMENT for table `ramal`
 --
 ALTER TABLE `ramal`
-  MODIFY `ip` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `ip` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `setor`

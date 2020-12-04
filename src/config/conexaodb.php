@@ -1,7 +1,10 @@
 <?php
 
+// Bd da base de testes/homologação
+// Não subir para a prod com esse banco
+
 $servidor = 'localhost:3307';
-$db = 'alpinodb';
+$db = 'alpinodbteste'; // Em prod, alterar para alpinodbprod
 $usuario = 'root';
 $senha = 'root';
 
