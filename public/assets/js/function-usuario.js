@@ -1,4 +1,3 @@
-// usuarios
 $(document).ready(function () {
     $("input[name='inputIp']").blur(function () {
         var $usuario = $("input[name='inputUsuario']");

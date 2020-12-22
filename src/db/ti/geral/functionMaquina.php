@@ -8,18 +8,19 @@ function retorna($tag, $conn) {
         $row_usuario = mysqli_fetch_assoc($search);
         $valores['modelo'] = $row_usuario['modelo'];
         $valores['tipo'] = $row_usuario['tipo'];
+        $valores['pcid'] = $row_usuario['pcid'];
         $valores['processador'] = $row_usuario['processador'];
         $valores['memoria'] = $row_usuario['memoria'];
         $valores['armazenamento'] = $row_usuario['armazenamento'];
-        $valores['tipoArmazenamento'] = $row_usuario['tipo_armazenamento'];
-        $valores['so'] = $row_usuario['sistema_operacional'];
-        $valores['nfCompra'] = $row_usuario['nfcompra'];
-        $valores['compra'] = $row_usuario['datacompra'];
+        $valores['tipo_armazenamento'] = $row_usuario['tipo_armazenamento'];
+        $valores['sistema_operacional'] = $row_usuario['sistema_operacional'];
+        $valores['nfcompra'] = $row_usuario['nfcompra'];
+        $valores['datacompra'] = $row_usuario['datacompra'];
         $valores['distribuidora'] = $row_usuario['distribuidora'];
-        $valores['nfGarantia'] = $row_usuario['nfgarantia'];
-        $valores['garantia'] = $row_usuario['datagarantia'];
+        $valores['nfgarantia'] = $row_usuario['nfgarantia'];
+        $valores['datagarantia'] = $row_usuario['datagarantia'];
     } else {
-        $valores['modelo'] = 'Máquina sem cadastro';
+        $valores['modelo'] = 'Office sem cadastro';
     }
 
     return json_encode($valores);

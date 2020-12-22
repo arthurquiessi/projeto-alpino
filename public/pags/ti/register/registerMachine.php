@@ -50,12 +50,12 @@
                                 <div class="col">
                                     <form action="../../../../src/db/ti/maquinas/insert.php" method="POST">
                                         <div class="form-row">
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-2">
                                                 <label for="inputTag">Tag</label>
                                                 <input type="text" name="inputTag" class="form-control" id="inputTag"
                                                     required>
                                             </div>
-                                            <div class="form-group col-md-5">
+                                            <div class="form-group col-md-3">
                                                 <label for="inputModelo">Modelo</label>
                                                 <select name="inputModelo" id="inputModelo" class="form-control">
                                                     <option value="" selected>Escolher...</option>
@@ -65,7 +65,7 @@
                                                     <?php } ?>
                                                 </select>
                                             </div>
-                                            <div class="form-group col-md-4">
+                                            <div class="form-group col-md-3">
                                                 <label for="inputTipo">Tipo</label>
                                                 <select name="inputTipo" id="inputTipo" class="form-control">
                                                     <option value="" selected>Escolher...</option>
@@ -74,6 +74,11 @@
                                                         <?php echo $linha_tipo['tipo_maquina']; ?></option>
                                                     <?php } ?>
                                                 </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputIdpc">ID do PC</label>
+                                                <input type="text" name="inputIdpc" class="form-control" id="inputIdpc"
+                                                    required>
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
@@ -220,6 +225,7 @@
                                         data-tag="<?php echo $linha_tabela['tag']; ?>"
                                         data-modelo="<?php echo $linha_tabela['modelo']; ?>"
                                         data-tipo="<?php echo $linha_tabela['tipo']; ?>"
+                                        data-pcid="<?php echo $linha_tabela['pcid']; ?>"
                                         data-processador="<?php echo $linha_tabela['processador']; ?>"
                                         data-memoria="<?php echo $linha_tabela['memoria']; ?>"
                                         data-armazenamento="<?php echo $linha_tabela['armazenamento']; ?>"
@@ -279,11 +285,11 @@
                         <form action="../../../../src/db/ti/maquinas/edit.php" method="POST">
                             <div class="form-row">
                                 <div><input type="hidden" name="inputId" class="form-control" id="id"></div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-2">
                                     <label for="inputTag">Tag</label>
                                     <input type="text" name="inputTag" class="form-control" id="tag">
                                 </div>
-                                <div class="form-group col-md-5">
+                                <div class="form-group col-md-3">
                                     <label for="modelo">Modelo</label>
                                     <select name="inputModelo" class="form-control" id="modelo">
                                         <option value="" selected>Escolher...</option>
@@ -295,7 +301,7 @@
                                         <?php } ?>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="inputTipo">Tipo</label>
                                     <select name="inputTipo" id="tipo" class="form-control">
                                         <option value="" selected>Escolher...</option>
@@ -306,6 +312,10 @@
                                             <?php echo $linha_edit_tipo['tipo_maquina']; ?></option>
                                         <?php } ?>
                                     </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputIdpc">ID do PC</label>
+                                    <input type="text" name="inputIdpc" class="form-control" id="pcid">
                                 </div>
                             </div>
                             <div class="form-row justify-content-center">

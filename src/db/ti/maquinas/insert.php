@@ -5,6 +5,7 @@ include_once("../../../config/conexaodb.php");
 $tag = $_POST['inputTag'];
 $modelo = $_POST['inputModelo'];
 $tipo = $_POST['inputTipo'];
+$idpc = $_POST['inputIdpc'];
 $processador = $_POST['inputProcessador'];
 $memoria = $_POST['inputMemoria'];
 $armazenamento = $_POST['inputArmazenamento'];
@@ -20,8 +21,8 @@ $status = $_POST['inputStatus'];
 $coleta = mysqli_query($conn, "SELECT * FROM maquina where tag = '{$tag}'");
 
 if(mysqli_num_rows($coleta) == 0) {
-    $cadastro = "INSERT INTO `maquina` (`id`, `tag`, `modelo`, `tipo`, `processador`, `memoria`, `armazenamento`, `tipo_armazenamento`, `sistema_operacional`, `nfcompra`, `datacompra`, `distribuidora`, `nfgarantia`, `datagarantia`, `statusmaq`) 
-                VALUES (NULL, '$tag', '$modelo', '$tipo', '$processador', '$memoria', '$armazenamento', '$tipo_armazenamento', '$so', '$nfCompra', '$compra', '$distribuidora', '$nfGarantia', '$garantia', '$status')";
+    $cadastro = "INSERT INTO `maquina` (`id`, `tag`, `modelo`, `tipo`, `pcid`, `processador`, `memoria`, `armazenamento`, `tipo_armazenamento`, `sistema_operacional`, `nfcompra`, `datacompra`, `distribuidora`, `nfgarantia`, `datagarantia`, `statusmaq`) 
+                VALUES (NULL, '$tag', '$modelo', '$tipo', '$idpc', '$processador', '$memoria', '$armazenamento', '$tipo_armazenamento', '$so', '$nfCompra', '$compra', '$distribuidora', '$nfGarantia', '$garantia', '$status')";
     $result = mysqli_query($conn, $cadastro);
 
     if(mysqli_affected_rows($conn) != 0){ 

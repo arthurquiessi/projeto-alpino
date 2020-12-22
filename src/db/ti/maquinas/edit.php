@@ -6,6 +6,7 @@ $id = $_POST['inputId'];
 $tag = $_POST['inputTag'];
 $modelo = $_POST['inputModelo'];
 $tipo = $_POST['inputTipo'];
+$idpc = $_POST['inputIdpc'];
 $processador = $_POST['inputProcessador'];
 $memoria = $_POST['inputMemoria'];
 $armazenamento = $_POST['inputArmazenamento'];
@@ -18,7 +19,7 @@ $nfGarantia = $_POST['inputNfGarantia'];
 $garantia = $_POST['inputGarantia'];
 $status = $_POST['inputStatus'];
 
-$edit = "UPDATE `maquina` SET tag = '$tag', modelo = '$modelo', tipo = '$tipo',
+$edit = "UPDATE `maquina` SET tag = '$tag', modelo = '$modelo', tipo = '$tipo', pcid = '$idpc',
         processador = '$processador', memoria = '$memoria', armazenamento = '$armazenamento',
         tipo_armazenamento = '$tipo_armazenamento', sistema_operacional = '$so', nfcompra = '$nfCompra',
         datacompra = '$compra', distribuidora = '$distribuidora', nfgarantia = '$nfGarantia',

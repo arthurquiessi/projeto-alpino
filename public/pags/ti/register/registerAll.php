@@ -1,9 +1,9 @@
 <?php
     include_once("../../../../src/config/conexaodb.php");
 
-    $sql_tag = mysqli_query($conn, "SELECT * FROM maquina WHERE statusmaq='ATIVO'");
+    $sql_tag = mysqli_query($conn, "SELECT * FROM maquina WHERE statusmaq='ATIVO' ORDER BY tag asc");
 
-    $sql_office = mysqli_query($conn, "SELECT * FROM msoffice WHERE statusoffice='ATIVO'");
+    $sql_office = mysqli_query($conn, "SELECT * FROM msoffice WHERE statusoffice='ATIVO' ORDER BY inicio asc");
 ?>
 <html lang="pt-br">
 
@@ -38,7 +38,7 @@
                             <h5 class="card-title">USUÁRIOS</h5>
                             <div class="row">
                                 <div class="col">
-                                    <form action="" method="POST">
+                                    <form action="../../../../src/db/ti/geral/insert.php" method="POST">
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-3">
                                                 <label for="inputWlan">Wlan</label>
@@ -47,32 +47,32 @@
                                             </div>
                                             <div class="form-group col-md-1">
                                                 <label for="inputIp">IP</label>
-                                                <input type="text" name="inputIp" class="form-control" id="ip"
+                                                <input type="text" name="inputIp" class="form-control" id="inputIp"
                                                     placeholder="IP">
                                             </div>
                                             <div class="form-group col-md-5">
                                                 <label for="inputUsuario">Usuário</label>
-                                                <input type="text" name="inputUsuario" class="form-control" id="usuario"
-                                                    disabled>
+                                                <input type="text" name="inputUsuario" class="form-control"
+                                                    id="inputUsuario" disabled>
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-4">
                                                 <label for="inputSetor">Setor</label>
-                                                <input type="text" name="inputSetor" class="form-control" id="setor"
-                                                    disabled>
+                                                <input type="text" name="inputSetor" class="form-control"
+                                                    id="inputSetor" disabled>
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <label for="inputHomeOffice">Home Office</label>
                                                 <input type="text" name="inputHomeOffice" class="form-control"
-                                                    id="homeOffice" disabled>
+                                                    id="inputHomeOffice" disabled>
                                             </div>
                                         </div>
                                         <div class="pt-3">
                                             <h5 class="card-title">MÁQUINAS</h5>
                                         </div>
                                         <div class="form-row">
-                                            <div class="form-group col-md-3">
+                                            <div class="form-group col-md-2">
                                                 <label for="inputTag">Tag</label>
                                                 <select id="inputTag" name="inputTag" class="form-control">
                                                     <option value="" selected>Escolher...</option>
@@ -85,14 +85,19 @@
                                                     <?php } ?>
                                                 </select>
                                             </div>
-                                            <div class="form-group col-md-5">
+                                            <div class="form-group col-md-3">
                                                 <label for="inputModelo">Modelo</label>
                                                 <input type="text" name="inputModelo" class="form-control"
                                                     id="inputModelo" disabled>
                                             </div>
-                                            <div class="form-group col-md-4">
+                                            <div class="form-group col-md-3">
                                                 <label for="inputTipo">Tipo</label>
                                                 <input type="text" name="inputTipo" class="form-control" id="inputTipo"
+                                                    disabled>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputIdpc">ID do PC</label>
+                                                <input type="text" name="inputIdpc" class="form-control" id="inputIdpc"
                                                     disabled>
                                             </div>
                                         </div>
@@ -224,10 +229,10 @@
         <!-- Bootstrap/Jquery/Popper.js -->
         <script src="../../../../node_modules/popper.js/dist/popper.min.js"></script>
         <script src="../../../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="../../../../public/assets/js/function-usuarios.js"></script>
-        <script src="../../../../public/assets/js/function-maquina.js"></script>
-        <script src="../../../../public/assets/js/function-office.js"></script>
-        <script src="../../../../public/assets/js/function-ramal.js"></script>
+        <script src="../../../assets/js/function-usuario.js"></script>
+        <script src="../../../assets/js/function-maquina.js"></script>
+        <script src="../../../assets/js/function-office.js"></script>
+        <script src="../../../assets/js/function-ramal.js"></script>
 </body>
 
 </html>
