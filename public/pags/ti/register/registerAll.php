@@ -53,19 +53,19 @@
                                             <div class="form-group col-md-5">
                                                 <label for="inputUsuario">Usuário</label>
                                                 <input type="text" name="inputUsuario" class="form-control"
-                                                    id="inputUsuario" disabled>
+                                                    id="inputUsuario" readonly=“true”>
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-4">
                                                 <label for="inputSetor">Setor</label>
                                                 <input type="text" name="inputSetor" class="form-control"
-                                                    id="inputSetor" disabled>
+                                                    id="inputSetor" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <label for="inputHomeOffice">Home Office</label>
                                                 <input type="text" name="inputHomeOffice" class="form-control"
-                                                    id="inputHomeOffice" disabled>
+                                                    id="inputHomeOffice" readonly=“true”>
                                             </div>
                                         </div>
                                         <div class="pt-3">
@@ -88,73 +88,73 @@
                                             <div class="form-group col-md-3">
                                                 <label for="inputModelo">Modelo</label>
                                                 <input type="text" name="inputModelo" class="form-control"
-                                                    id="inputModelo" disabled>
+                                                    id="inputModelo" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="inputTipo">Tipo</label>
                                                 <input type="text" name="inputTipo" class="form-control" id="inputTipo"
-                                                    disabled>
+                                                    readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputIdpc">ID do PC</label>
                                                 <input type="text" name="inputIdpc" class="form-control" id="inputIdpc"
-                                                    disabled>
+                                                    readonly=“true”>
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-3">
                                                 <label for="inputProcessador">Processador</label>
                                                 <input type="text" name="inputProcessador" class="form-control"
-                                                    id="inputProcessador" disabled>
+                                                    id="inputProcessador" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <label for="inputMemoria">Memória (Ram)</label>
                                                 <input type="text" name="inputMemoria" class="form-control"
-                                                    id="inputMemoria" disabled>
+                                                    id="inputMemoria" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <label for="inputArmazenamento">Armazenagem</label>
                                                 <input type="text" name="inputArmazenamento" class="form-control"
-                                                    id="inputArmazenamento" disabled>
+                                                    id="inputArmazenamento" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <label for="inputTipoArmazenamento">Tipo Armazenagem</label>
                                                 <input type="text" name="inputTipoArmazenamento" class="form-control"
-                                                    id="inputTipoArmazenamento" disabled>
+                                                    id="inputTipoArmazenamento" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="inputSo">Sistema Operacional</label>
                                                 <input type="text" name="inputSo" class="form-control" id="inputSo"
-                                                    disabled>
+                                                    readonly=“true”>
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-3">
                                                 <label for="inputNfCompra">NF Compra</label>
                                                 <input type="text" name="inputNfCompra" class="form-control"
-                                                    id="inputNfCompra" disabled>
+                                                    id="inputNfCompra" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="inputCompra">Data Compra</label>
                                                 <input type="text" name="inputCompra" class="form-control"
-                                                    id="inputCompra" disabled>
+                                                    id="inputCompra" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="inputDistribuidora">Distribuidora</label>
                                                 <input type="text" name="inputDistribuidora" class="form-control"
-                                                    id="inputDistribuidora" disabled>
+                                                    id="inputDistribuidora" readonly=“true”>
                                             </div>
                                         </div>
                                         <div class="form-row justify-content-center">
                                             <div class="form-group col-md-3">
                                                 <label for="inputNfGarantia">NF Garantia</label>
                                                 <input type="text" name="inputNfGarantia" class="form-control"
-                                                    id="inputNfGarantia" disabled>
+                                                    id="inputNfGarantia" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="inputGarantia">Data Garantia</label>
                                                 <input type="text" name="inputGarantia" class="form-control"
-                                                    id="inputGarantia" disabled>
+                                                    id="inputGarantia" readonly=“true”>
                                             </div>
                                         </div>
                                         <div class="pt-3">
@@ -177,12 +177,12 @@
                                             <div class="form-group col-md-6">
                                                 <label for="inputSerial">Product Key do Office</label>
                                                 <input type="text" name="inputSerial" class="form-control"
-                                                    id="inputSerial" disabled>
+                                                    id="inputSerial" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputVersao">Versão do Office</label>
                                                 <input type="text" name="inputVersao" class="form-control"
-                                                    id="inputVersao" disabled>
+                                                    id="inputVersao" readonly=“true”>
                                             </div>
                                         </div>
                                         <div class="pt-3">
@@ -192,7 +192,7 @@
                                             <div class="form-group col-md-3">
                                                 <label for="inputWlan1">Wlan</label>
                                                 <input type="text" name="inputWlan1" class="form-control"
-                                                    id="inputWlan1" placeholder="192.168.2." disabled>
+                                                    id="inputWlan1" placeholder="192.168.2." readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-1">
                                                 <label for="inputIpRamal">IP</label>
@@ -202,12 +202,12 @@
                                             <div class="form-group col-md-4">
                                                 <label for="inputRamal">Nº Ramal</label>
                                                 <input type="text" name="inputRamal" class="form-control"
-                                                    id="inputRamal" disabled>
+                                                    id="inputRamal" readonly=“true”>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="inputModeloRamal">Modelo Ramal</label>
                                                 <input type="text" name="inputModeloRamal" class="form-control"
-                                                    id="inputModeloRamal" disabled>
+                                                    id="inputModeloRamal" readonly=“true”>
                                             </div>
                                         </div>
                                         <div class="pt-3">
