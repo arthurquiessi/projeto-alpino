@@ -76,7 +76,7 @@
                                             data-target="#editar" data-ip="<?php echo $linha_tabela['ip']; ?>"
                                             data-usuario="<?php echo $linha_tabela['usuario']; ?>"
                                             data-setor="<?php echo $linha_tabela['setor']; ?>"
-                                            data-homeOffice="<?php echo $linha_tabela['homeOffice']; ?>"
+                                            data-home_office="<?php echo $linha_tabela['home_office']; ?>"
                                             data-tag="<?php echo $linha_tabela['tag']; ?>"
                                             data-modelo="<?php echo $linha_tabela['modelo']; ?>"
                                             data-tipo="<?php echo $linha_tabela['tipo']; ?>"
@@ -94,7 +94,7 @@
                                             data-inicio="<?php echo $linha_tabela['inicio']; ?>"
                                             data-chave_produto="<?php echo $linha_tabela['chave_produto']; ?>"
                                             data-versao_office="<?php echo $linha_tabela['versao_office']; ?>"
-                                            data-ipRamal="<?php echo $linha_tabela['ipRamal']; ?>"
+                                            data-ip_ramal="<?php echo $linha_tabela['ip_ramal']; ?>"
                                             data-ramal="<?php echo $linha_tabela['ramal']; ?>"
                                             data-modelo_ramal="<?php echo $linha_tabela['modelo_ramal']; ?>">
                                             Visualizar
@@ -149,7 +149,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputHomeOffice">Home Office</label>
-                                <input type="text" name="inputHomeOffice" class="form-control" id="homeOffice"
+                                <input type="text" name="inputHomeOffice" class="form-control" id="home_office"
                                     readonly=“true”>
                             </div>
                         </div>
@@ -278,7 +278,7 @@
                             </div>
                             <div class="form-group col-md-1">
                                 <label for="inputIpRamal">IP</label>
-                                <input type="text" name="inputIpRamal" class="form-control" id="ipRamal"
+                                <input type="text" name="inputIpRamal" class="form-control" id="ip_ramal"
                                     placeholder="IP">
                             </div>
                             <div class="form-group col-md-4">
