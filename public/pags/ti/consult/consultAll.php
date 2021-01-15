@@ -25,7 +25,7 @@
     <?php 
         include '../include/nav_register.php';
     ?>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col">
                 <div class="py-2 text-center">
@@ -100,7 +100,7 @@
                                             Visualizar
                                         </button>
                                         <a
-                                            href="../../../../src/db/ti/geral/delete.php?id=<?php echo $linha_tabela['ip']; ?>">
+                                            href="../../../../src/db/ti/geral/delete.php?id=<?php echo $linha_tabela['id']; ?>">
                                             <button type="button" class="btn btn-outline-danger btn-sm">Excluir</button>
                                         </a>
                                     </td>
@@ -127,6 +127,7 @@
                 <div class="modal-body">
                     <form action="../../../../src/db/ti/geral/edit.php" method="POST">
                         <div class="form-row justify-content-center">
+                            <div><input type="hidden" name="inputId" class="form-control" id="id"></div>
                             <div class="form-group col-md-3">
                                 <label for="inputWlan">Wlan</label>
                                 <input type="text" name="inputWlan" class="form-control" id="wlan"

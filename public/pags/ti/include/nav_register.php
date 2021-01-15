@@ -33,6 +33,9 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="../consult/consultAll.php">Consulta Geral</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Filtros</a>
+                    <a class="dropdown-item" href="#">Filtro Diretoria</a>
                 </div>
             </li>
             <li class="nav-item">
