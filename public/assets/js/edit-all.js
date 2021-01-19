@@ -1,5 +1,6 @@
 $('#editar').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
+    var id = button.data('id')
     var ip = button.data('ip')
     var usuario = button.data('usuario')
     var setor = button.data('setor')
@@ -27,6 +28,7 @@ $('#editar').on('show.bs.modal', function (event) {
     var modal = $(this)
 
     modal.find('.modal-title').text('Editar Usuário: ' + usuario)
+    modal.find('#id').val(id)
     modal.find('#ip').val(ip)
     modal.find('#usuario').val(usuario)
     modal.find('#setor').val(setor)

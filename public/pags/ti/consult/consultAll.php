@@ -73,7 +73,8 @@
                                     </td>
                                     <td>
                                         <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal"
-                                            data-target="#editar" data-ip="<?php echo $linha_tabela['ip']; ?>"
+                                            data-target="#editar" data-id="<?php echo $linha_tabela['id']; ?>"
+                                            data-ip="<?php echo $linha_tabela['ip']; ?>"
                                             data-usuario="<?php echo $linha_tabela['usuario']; ?>"
                                             data-setor="<?php echo $linha_tabela['setor']; ?>"
                                             data-home_office="<?php echo $linha_tabela['home_office']; ?>"
@@ -127,7 +128,9 @@
                 <div class="modal-body">
                     <form action="../../../../src/db/ti/geral/edit.php" method="POST">
                         <div class="form-row justify-content-center">
-                            <div><input type="hidden" name="inputId" class="form-control" id="id"></div>
+                            <div class="form-group col-md-1">
+                                <input type="hidden" name="inputId" class="form-control" id="id">
+                            </div>
                             <div class="form-group col-md-3">
                                 <label for="inputWlan">Wlan</label>
                                 <input type="text" name="inputWlan" class="form-control" id="wlan"
