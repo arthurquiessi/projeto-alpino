@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="../main.php" style="font-size:16px;">Home<span class="sr-only"></span></a>
+                <a class="nav-link" href="main.php" style="font-size:16px;">Home<span class="sr-only"></span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

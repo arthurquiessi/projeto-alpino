@@ -39,7 +39,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./register/registerPrinter.php" style="font-size:16px;">Impressoras<span
+                <a class="nav-link" href="../register/registerPrinter.php" style="font-size:16px;">Impressoras<span
                         class="sr-only"></span></a>
             </li>
         </ul>

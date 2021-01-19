@@ -4,6 +4,8 @@
     $sql_usuario = mysqli_query($conn, "SELECT * FROM usuario WHERE usuario='LIVRE'");
 
     $sql_setor_edit = mysqli_query($conn, "SELECT * FROM setor");
+
+    $sql_impressora = mysqli_query($conn, "SELECT * FROM impressora");
 ?>
 <html lang="pt-br">
 
@@ -85,27 +87,29 @@
                                         <caption>Impressoras Alpino</caption>
                                         <thead>
                                             <tr class="table-info">
-                                                <th scope="col">#</th>
-                                                <th scope="col">Primeiro</th>
-                                                <th scope="col">Último</th>
+                                                <th scope="col">IP</th>
+                                                <th scope="col">IMPRESSORA</th>
+                                                <th scope="col">SETOR</th>
+                                                <th scope="col">N/S</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php while($tabela_impressora = mysqli_fetch_assoc($sql_impressora)) { ?>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
+                                                <td>
+                                                    <?php echo $tabela_impressora['ip']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $tabela_impressora['nome_impressora']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $tabela_impressora['setor']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $tabela_impressora['numero_serie']; ?>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                            </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

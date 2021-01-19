@@ -1,0 +1,16 @@
+$('#editar').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var ip = button.data('ip')
+    var nome_impressora = button.data('nome_impressora')
+    var setor = button.data('setor')
+    var numero_serie = button.data('numero_serie')
+    var modelo = button.data('modelo')
+    var modal = $(this)
+
+    modal.find('.modal-title').text('Editar office início: ' + nome_impressora)
+    modal.find('#ip').val(ip)
+    modal.find('#nome_impressora').val(nome_impressora)
+    modal.find('#setor').val(setor)
+    modal.find('#numero_serie').val(numero_serie)
+    modal.find('#modelo').val(modelo)
+})

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Jan 19, 2021 at 05:53 PM
+-- Generation Time: Jan 19, 2021 at 07:38 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -157,6 +157,28 @@ INSERT INTO `geral` (`id`, `ip`, `usuario`, `setor`, `home_office`, `tag`, `mode
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `impressora`
+--
+
+CREATE TABLE `impressora` (
+  `ip` int(11) NOT NULL,
+  `nome_impressora` varchar(250) NOT NULL,
+  `setor` varchar(250) NOT NULL,
+  `numero_serie` varchar(250) NOT NULL,
+  `modelo` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `impressora`
+--
+
+INSERT INTO `impressora` (`ip`, `nome_impressora`, `setor`, `numero_serie`, `modelo`) VALUES
+(211, 'OKI-COLOR-TESTE', 'RECURSOS HUMANOS', 'AK45057240B0', 'BROTHER DCP-L5652DN'),
+(216, 'OKI-COLOR-ADM', 'DESENVOLVIMENTO', 'AK31003353B0', 'OKI ES6405');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `maquina`
 --
 
@@ -295,6 +317,7 @@ INSERT INTO `modelo_impressora` (`id`, `modelo_impressora`) VALUES
 (6, 'BROTHER DCP-L5652DN'),
 (5, 'CANON IR2525'),
 (4, 'OKI B431'),
+(7, 'OKI ES6405'),
 (3, 'OKI MB491+');
 
 -- --------------------------------------------------------
@@ -648,6 +671,7 @@ CREATE TABLE `setor` (
 --
 
 INSERT INTO `setor` (`id`, `setor`) VALUES
+(36, 'ADMINISTRAÇÃO'),
 (21, 'ALMOXARIFADO'),
 (28, 'ALMOXARIFADO TUBOS'),
 (3, 'COMPRAS'),
@@ -915,6 +939,12 @@ ALTER TABLE `geral`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `impressora`
+--
+ALTER TABLE `impressora`
+  ADD PRIMARY KEY (`ip`);
+
+--
 -- Indexes for table `maquina`
 --
 ALTER TABLE `maquina`
@@ -1026,7 +1056,7 @@ ALTER TABLE `maquina`
 -- AUTO_INCREMENT for table `modelo_impressora`
 --
 ALTER TABLE `modelo_impressora`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `modelo_maquina`
@@ -1068,7 +1098,7 @@ ALTER TABLE `ramal`
 -- AUTO_INCREMENT for table `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `sistema_operacional`
