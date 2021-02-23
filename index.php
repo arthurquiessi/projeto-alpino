@@ -41,6 +41,8 @@
                         <h5 class="card-title">Tecnologia da Informação</h5>
                         <p class="card-text text-primary">Controle e gerenciamento da equipe de T.I Alpino</p>
                         <a href="login.php" class="btn btn-primary">Entrar</a>
+                        <a href="./public/pags/ti/consult/consultSimple.php"
+                            class="btn btn-outline-warning">Consultar</a>
                     </div>
                 </div>
             </div>

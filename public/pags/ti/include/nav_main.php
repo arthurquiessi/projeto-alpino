@@ -34,12 +34,16 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="./consult/consultAll.php">Consulta Geral</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Filtros</a>
-                    <a class="dropdown-item" href="#">Filtro Diretoria</a>
+                    <a class="dropdown-item" href="./consult/filter/filter.php">Filtros</a>
+                    <a class="dropdown-item" href="./consult/filter/filterDiretoria.php">Filtro Diretoria</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./register/registerPrinter.php" style="font-size:16px;">Impressoras<span
+                        class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./checklist/index.php" style="font-size:16px;">Checklist<span
                         class="sr-only"></span></a>
             </li>
         </ul>

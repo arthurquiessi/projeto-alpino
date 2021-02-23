@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <a class="navbar-brand" href="#">
-        <img src="../../../assets/img/logo.png" width="100" height="40" alt="">
+        <img src="../../../../assets/img/logo.png" width="100" height="40" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
         aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="../main.php" style="font-size:16px;">Home<span class="sr-only"></span></a>
+                <a class="nav-link" href="../../main.php" style="font-size:16px;">Home<span class="sr-only"></span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -18,12 +18,12 @@
                     Cadastrar
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../register/registerAll.php">Cadastro Geral</a>
+                    <a class="dropdown-item" href="../../register/registerAll.php">Cadastro Geral</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="../register/registerUser.php">Usuários</a>
-                    <a class="dropdown-item" href="../register/registerMachine.php">Máquinas</a>
-                    <a class="dropdown-item" href="../register/registerOffice.php">MS Office</a>
-                    <a class="dropdown-item" href="../register/registerRamal.php">Ramal</a>
+                    <a class="dropdown-item" href="../../register/registerUser.php">Usuários</a>
+                    <a class="dropdown-item" href="../../register/registerMachine.php">Máquinas</a>
+                    <a class="dropdown-item" href="../../register/registerOffice.php">MS Office</a>
+                    <a class="dropdown-item" href="../../register/registerRamal.php">Ramal</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -32,18 +32,18 @@
                     Consultar
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../consult/consultAll.php">Consulta Geral</a>
+                    <a class="dropdown-item" href="../../consult/consultAll.php">Consulta Geral</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="../consult/filter/filter.php">Filtros</a>
-                    <a class="dropdown-item" href="../consult/filter/filterDiretoria.php">Filtro Diretoria</a>
+                    <a class="dropdown-item" href="filter.php">Filtros</a>
+                    <a class="dropdown-item" href="filterDiretoria.php">Filtro Diretoria</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../register/registerPrinter.php" style="font-size:16px;">Impressoras<span
+                <a class="nav-link" href="../../register/registerPrinter.php" style="font-size:16px;">Impressoras<span
                         class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../checklist/index.php" style="font-size:16px;">Checklist<span
+                <a class="nav-link" href="../../checklist/index.php" style="font-size:16px;">Checklist<span
                         class="sr-only"></span></a>
             </li>
         </ul>
